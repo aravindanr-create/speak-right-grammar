@@ -1,0 +1,1410 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Speak Right Grammar Book</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Noto+Sans+Tamil:wght@400;600&display=swap">
+<style>
+/* Layout: a single reading column (max 720px) – home = colour-banded part index; chapter = stacked lesson blocks with tap quizzes */
+:root{
+  --bg:#f6f7fb; --paper:#ffffff; --ink:#1d2333; --muted:#5b6478; --line:#e3e6ef;
+  --p1:#2563c9; --p2:#d9482b; --p3:#7c3aed; --p4:#0f8a5f; --p5:#c27803; --p6:#d1336f;
+  --c-s:#2563c9; --c-s-bg:#e3edff;
+  --c-v:#d9482b; --c-v-bg:#ffe6df;
+  --c-h:#7c3aed; --c-h-bg:#efe6ff;
+  --c-o:#0f8a5f; --c-o-bg:#dcf5ea;
+  --c-k:#a35f00; --c-k-bg:#fff0cc;
+  --ok:#0f8a5f; --ok-bg:#dcf5ea; --bad:#c62828; --bad-bg:#fde4e4;
+  --ta-bg:#fff7e8; --ta-line:#f0c46b;
+  --f-display:"Bricolage Grotesque","Segoe UI",system-ui,sans-serif;
+  --f-body:"Atkinson Hyperlegible","Segoe UI",system-ui,sans-serif;
+  --f-tamil:"Noto Sans Tamil","Latha","Nirmala UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]){
+  --bg:#12151d; --paper:#1b1f2a; --ink:#eef0f6; --muted:#a3abbf; --line:#2c3242;
+  --p1:#6ea0ff; --p2:#ff8466; --p3:#b18cff; --p4:#3fd09a; --p5:#ffbf47; --p6:#ff79a8;
+  --c-s:#8db6ff; --c-s-bg:#1e2c4a; --c-v:#ff9a80; --c-v-bg:#45231c;
+  --c-h:#c4a6ff; --c-h-bg:#2f2350; --c-o:#5fe0ad; --c-o-bg:#173a2d;
+  --c-k:#ffcb66; --c-k-bg:#3f3115;
+  --ok:#5fe0ad; --ok-bg:#173a2d; --bad:#ff8a8a; --bad-bg:#47201f;
+  --ta-bg:#2b2416; --ta-line:#8a6a2a; color-scheme:dark }}
+:root[data-theme="dark"]{
+  --bg:#12151d; --paper:#1b1f2a; --ink:#eef0f6; --muted:#a3abbf; --line:#2c3242;
+  --p1:#6ea0ff; --p2:#ff8466; --p3:#b18cff; --p4:#3fd09a; --p5:#ffbf47; --p6:#ff79a8;
+  --c-s:#8db6ff; --c-s-bg:#1e2c4a; --c-v:#ff9a80; --c-v-bg:#45231c;
+  --c-h:#c4a6ff; --c-h-bg:#2f2350; --c-o:#5fe0ad; --c-o-bg:#173a2d;
+  --c-k:#ffcb66; --c-k-bg:#3f3115;
+  --ok:#5fe0ad; --ok-bg:#173a2d; --bad:#ff8a8a; --bad-bg:#47201f;
+  --ta-bg:#2b2416; --ta-line:#8a6a2a; color-scheme:dark }
+
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:17px;line-height:1.6;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 60px}
+.wrap{max-width:720px;margin:0 auto;display:flex;flex-direction:column;gap:22px}
+h1,h2,h3{font-family:var(--f-display);line-height:1.15;text-wrap:balance;margin:0}
+.ta{font-family:var(--f-tamil)}
+button{font:inherit;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:3px solid var(--p1);outline-offset:2px}
+
+/* --- colour coded words --- */
+.w{border-radius:6px;padding:1px 5px;font-weight:700;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.w-s{color:var(--c-s);background:var(--c-s-bg)}
+.w-v{color:var(--c-v);background:var(--c-v-bg)}
+.w-h{color:var(--c-h);background:var(--c-h-bg)}
+.w-o{color:var(--c-o);background:var(--c-o-bg)}
+.w-k{color:var(--c-k);background:var(--c-k-bg)}
+
+/* --- home --- */
+.cover{display:flex;flex-direction:column;gap:10px;padding-top:6px}
+.cover .eyebrow{font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.cover h1{font-size:clamp(34px,8vw,52px);font-weight:800;letter-spacing:-.02em}
+.cover h1 .stripe{background:linear-gradient(90deg,var(--p1),var(--p3),var(--p2),var(--p5),var(--p4));-webkit-background-clip:text;background-clip:text;color:transparent}
+.cover p{margin:0;color:var(--muted);max-width:60ch}
+.legend{display:flex;flex-wrap:wrap;gap:8px;padding:14px;background:var(--paper);border:1px solid var(--line);border-radius:14px}
+.legend b{width:100%;font-size:13px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.howto{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+.howto h3{font-size:18px;margin-bottom:8px}
+.howto ol{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:4px}
+.prog{display:flex;flex-direction:column;gap:6px}
+.prog .bar{height:10px;border-radius:99px;background:var(--line);overflow:hidden}
+.prog .bar i{display:block;height:100%;background:linear-gradient(90deg,var(--p4),var(--p1));width:0;transition:width .4s}
+.prog small{color:var(--muted)}
+.part{display:flex;flex-direction:column;gap:10px}
+.part-head{display:flex;align-items:baseline;gap:12px;border-bottom:3px solid var(--pc);padding-bottom:6px}
+.part-head .num{font-family:var(--f-display);font-weight:800;font-size:15px;color:var(--paper);background:var(--pc);border-radius:8px;padding:2px 9px;flex:none}
+.part-head h2{font-size:22px;color:var(--pc)}
+.part-head span.sub{color:var(--muted);font-size:14px}
+.chlist{display:flex;flex-direction:column;gap:6px}
+.chbtn{display:flex;align-items:center;gap:12px;text-align:left;background:var(--paper);color:var(--ink);border:1px solid var(--line);border-radius:12px;padding:11px 14px;transition:transform .15s,border-color .15s}
+.chbtn:hover{border-color:var(--pc);transform:translateX(3px)}
+.chbtn .n{font-family:var(--f-display);font-weight:800;color:var(--pc);min-width:26px;font-variant-numeric:tabular-nums}
+.chbtn .tt{flex:1;min-width:0;font-weight:700}
+.chbtn .done{color:var(--ok);font-weight:700;font-size:14px}
+.lvl{font-size:11px;letter-spacing:.06em;text-transform:uppercase;font-weight:700;padding:2px 8px;border-radius:99px;border:1px solid currentColor;flex:none}
+.lvl.Essential{color:var(--p4)} .lvl.Useful{color:var(--p1)} .lvl.Advanced{color:var(--p3)}
+
+/* --- chapter --- */
+.topbar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);display:flex;align-items:center;justify-content:space-between;gap:10px;padding-block:8px;border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.ghost{background:none;border:1px solid var(--line);color:var(--ink);border-radius:10px;padding:7px 12px;font-weight:700;font-size:15px}
+.ch-head{display:flex;flex-direction:column;gap:8px;padding:20px;border-radius:18px;background:var(--pc);color:var(--paper)}
+.ch-head .meta{display:flex;gap:8px;align-items:center;flex-wrap:wrap;font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;opacity:.92}
+.ch-head .meta .lvl{color:inherit}
+.ch-head h1{font-size:clamp(28px,7vw,40px);font-weight:800}
+.block{display:flex;flex-direction:column;gap:10px}
+.block > h3{font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:var(--pc);display:flex;align-items:center;gap:8px}
+.block > h3::before{content:"";width:14px;height:14px;border-radius:4px;background:var(--pc)}
+.block p{margin:0}
+.rules{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+.rules li{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 14px}
+.exs{display:flex;flex-direction:column;gap:10px}
+.ex{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px;font-size:18px;line-height:1.9}
+.tip{background:var(--c-k-bg);color:var(--ink);border-radius:14px;padding:14px 16px}
+.tip b:first-child{color:var(--c-k)}
+.tamil{background:var(--ta-bg);border:1.5px dashed var(--ta-line);border-radius:14px;padding:14px 16px;display:flex;flex-direction:column;gap:10px}
+.tamil .lab{font-family:var(--f-tamil);font-weight:600;font-size:15px;color:var(--c-k)}
+.tamil p{font-family:var(--f-tamil);font-size:16px;line-height:1.8}
+.pair{display:flex;flex-direction:column;gap:4px;border-top:1px solid var(--ta-line);padding-top:10px}
+.pair .t{font-family:var(--f-tamil);font-size:16px}
+.pair .e{font-weight:700;color:var(--c-o)}
+.pair .e::before{content:"→ ";color:var(--muted)}
+.mist{display:flex;flex-direction:column;gap:10px}
+.mi{display:flex;flex-direction:column;gap:3px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.mi .x{color:var(--bad);text-decoration:line-through;text-decoration-thickness:2px}
+.mi .x::before{content:"✗ ";text-decoration:none;display:inline-block}
+.mi .r{color:var(--ok);font-weight:700}
+.mi .r::before{content:"✓ "}
+.mi small{color:var(--muted);font-size:14px}
+.speak{margin:0;padding-left:22px;display:flex;flex-direction:column;gap:6px}
+.q{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px}
+.q .qq{font-weight:700}
+.opts{display:flex;flex-direction:column;gap:8px}
+.opt{text-align:left;background:var(--bg);color:var(--ink);border:1.5px solid var(--line);border-radius:10px;padding:9px 12px}
+.opt:hover{border-color:var(--pc)}
+.opt.right{background:var(--ok-bg);border-color:var(--ok);color:var(--ok);font-weight:700}
+.opt.wrong{background:var(--bad-bg);border-color:var(--bad);color:var(--bad)}
+.fb{font-size:15px;border-radius:10px;padding:9px 12px}
+.fb.good{background:var(--ok-bg)} .fb.try{background:var(--bad-bg)}
+.navrow{display:flex;gap:10px;flex-wrap:wrap}
+.navrow button{flex:1 1 140px}
+.donebtn{background:var(--pc);color:var(--paper);border:none;border-radius:12px;padding:12px 16px;font-weight:700;font-size:16px}
+.donebtn.is{background:var(--ok-bg);color:var(--ok);border:1.5px solid var(--ok)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head><body>
+<script>
+const PARTS = [
+  {n:1, name:"Foundations", sub:"The building blocks every sentence uses"},
+  {n:2, name:"All the Tenses", sub:"Talking about past, present and future"},
+  {n:3, name:"Modal Verbs", sub:"Ability, advice, permission, possibility"},
+  {n:4, name:"Building Sentences", sub:"Questions, conditionals, passive, reported speech"},
+  {n:5, name:"The Small Words", sub:"Prepositions, connectors, phrasal verbs, quantity"},
+  {n:6, name:"Speaking Fluency", sub:"Fix common mistakes and sound natural"}
+];
+
+const CH = [
+/* ================= PART 1 ================= */
+{part:1, t:"Parts of Speech", lvl:"Essential",
+ what:"Every English word does a job in a sentence. There are 8 main jobs. These jobs are called <b>parts of speech</b>.",
+ why:"When you know a word's job, you know where it goes in a sentence. This stops you from mixing up words like <i>quick</i> and <i>quickly</i>.",
+ rules:[
+  "<b>Noun</b> – name of a person, place, thing or idea: <i>Meena, Madurai, bus, happiness</i>",
+  "<b>Pronoun</b> – takes the place of a noun: <i>I, you, he, she, it, we, they</i>",
+  "<b>Verb</b> – an action or a state: <i>eat, run, think, is, have</i>",
+  "<b>Adjective</b> – describes a noun: <i>big, red, kind, hot</i>",
+  "<b>Adverb</b> – describes a verb, adjective or another adverb: <i>slowly, very, always</i>",
+  "<b>Preposition</b> – shows place, time or direction: <i>in, on, at, under, to</i>",
+  "<b>Conjunction</b> – joins words or sentences: <i>and, but, or, because</i>",
+  "<b>Interjection</b> – a short sound of feeling: <i>Wow! Oh! Oops!</i>"
+ ],
+ ex:[
+  "[s:Meena] [v:cooks] [o:tasty food] [k:every day].  → noun · verb · adjective + noun · time",
+  "[s:She] [v:speaks] [k:very softly].  → pronoun · verb · adverb + adverb",
+  "[s:The cat] [v:is sleeping] [o:under the table].  → noun · verb · preposition phrase",
+  "[k:Wow!] [s:This mango] [v:is] [o:so sweet] [k:and] [o:juicy]."
+ ],
+ tip:"Adjective tells <b>what kind</b> (a <i>quick</i> runner). Adverb tells <b>how</b> (he runs <i>quickly</i>). Many adverbs end in <b>-ly</b>.",
+ mist:[
+  ["He drives very careful.","He drives very carefully.","'drives' is a verb, so it needs an adverb."],
+  ["She is a beautifully girl.","She is a beautiful girl.","'girl' is a noun, so it needs an adjective."]
+ ],
+ speak:["Describe your breakfast today using one adjective and one adverb.","Say 3 sentences about your street using the prepositions in, on, near."],
+ quiz:[
+  {q:"In 'The boy ran fast', what is 'fast'?", o:["Adjective","Adverb","Noun"], a:1, e:"'fast' tells HOW he ran, so it describes the verb – an adverb."},
+  {q:"Pick the correct sentence.", o:["She sings beautiful.","She sings beautifully."], a:1, e:"'sings' is an action, so we need the adverb 'beautifully'."},
+  {q:"Which word is a conjunction?", o:["because","under","slowly"], a:0, e:"'because' joins two ideas: I stayed home because it rained."}
+ ]},
+
+{part:1, t:"Sentence Structure (S‑V‑O)", lvl:"Essential",
+ what:"An English sentence has a fixed order: <b>Subject → Verb → Object</b>. The subject does the action, the verb is the action, the object receives it.",
+ why:"Tamil puts the verb at the end (<i>Naan saapaadu saapitten</i> = I food ate). English puts the verb in the <b>middle</b>. This is the biggest change when you speak.",
+ rules:[
+  "Basic order: <b>Subject + Verb + Object</b> → <i>I eat rice.</i>",
+  "Then add place, then time: <b>S + V + O + Place + Time</b> → <i>I eat rice at home every night.</i>",
+  "Every sentence needs a subject. Do not drop it: say <i>It is raining</i>, not <i>Is raining</i>.",
+  "Every sentence needs a verb. 'He good' is wrong. Say <i>He <b>is</b> good.</i>"
+ ],
+ ex:[
+  "[s:I] [v:drink] [o:coffee].",
+  "[s:My brother] [v:plays] [o:cricket] [k:in the park] [k:on Sundays].",
+  "[s:It] [v:is] [o:very hot] [k:today].",
+  "[s:We] [v:watched] [o:a movie] [k:last night]."
+ ],
+ tip:"Remember the word <b>SVOPT</b>: Subject, Verb, Object, Place, Time.",
+ mist:[
+  ["Yesterday I to market went.","Yesterday I went to the market.","Verb goes after the subject, not at the end."],
+  ["Very hot today.","It is very hot today.","Add the subject 'It' and the verb 'is'."]
+ ],
+ speak:["Say 5 sentences about your morning in SVOPT order.","Translate in your head: 'Naan nethu bus-la office ponen' → speak it in English order."],
+ quiz:[
+  {q:"Choose the correct order.", o:["I every day tea drink.","I drink tea every day.","Drink I tea every day."], a:1, e:"Subject (I) + Verb (drink) + Object (tea) + Time (every day)."},
+  {q:"What is missing in 'Is very cold'?", o:["The subject","The verb","Nothing"], a:0, e:"English needs a subject: 'It is very cold.'"}
+ ]},
+
+{part:1, t:"Nouns: Countable, Uncountable & Plurals", lvl:"Essential",
+ what:"A noun is a naming word. Some nouns can be counted (<i>one apple, two apples</i>). Some cannot (<i>water, rice, advice</i>).",
+ why:"Countable or uncountable decides whether you use <i>a/an</i>, a plural <i>-s</i>, and words like <i>many/much</i>.",
+ rules:[
+  "Most plurals add <b>-s</b>: book → books",
+  "Words ending in s, sh, ch, x, o add <b>-es</b>: bus → buses, box → boxes, tomato → tomatoes",
+  "Consonant + y → <b>-ies</b>: city → cities (but boy → boys)",
+  "Irregular: man → men, woman → women, child → children, foot → feet, tooth → teeth, person → people",
+  "Uncountable nouns have <b>no plural</b> and no 'a': water, milk, rice, money, information, advice, news, luggage, furniture, equipment",
+  "To count uncountable things, use a unit: <i>a glass of water, a piece of advice, two bags of rice</i>"
+ ],
+ ex:[
+  "[s:I] [v:bought] [o:three] [k:books] [o:and some] [k:rice].",
+  "[s:She] [v:gave] [o:me a piece of] [k:advice].",
+  "[s:The children] [v:are playing] [o:outside].",
+  "[s:This] [v:is] [o:useful] [k:information]."
+ ],
+ tip:"<b>News</b> looks plural but is singular: <i>The news <b>is</b> good.</i> <b>People</b> looks singular but is plural: <i>People <b>are</b> kind.</i>",
+ mist:[
+  ["He gave me many advices.","He gave me a lot of advice.","'advice' is uncountable – no -s."],
+  ["I have three luggages.","I have three bags.","'luggage' is uncountable. Count the bags."],
+  ["The informations are correct.","The information is correct.","No plural for 'information'."]
+ ],
+ speak:["List 5 things in your kitchen – say which are countable and which are not.","Ask a friend: 'Can you give me some advice about…?'"],
+ quiz:[
+  {q:"Plural of 'child'?", o:["childs","children","childrens"], a:1, e:"'child' is irregular → 'children'."},
+  {q:"Which is correct?", o:["I need an information.","I need some information."], a:1, e:"'information' is uncountable, so use 'some', not 'an'."},
+  {q:"The news ___ good today.", o:["are","is"], a:1, e:"'news' is uncountable and takes a singular verb."}
+ ]},
+
+{part:1, t:"Articles: a, an, the", lvl:"Essential",
+ what:"Articles are small words before nouns. <b>a/an</b> = one, any, not specific. <b>the</b> = a specific one both people know.",
+ why:"Tamil has no articles, so Indian speakers often drop them. Missing articles is one of the most noticeable errors in spoken English.",
+ rules:[
+  "<b>a</b> before a consonant <i>sound</i>: a car, a university (sounds 'yu')",
+  "<b>an</b> before a vowel <i>sound</i>: an apple, an hour (h is silent), an MBA ('em')",
+  "Use <b>a/an</b> the first time you mention something: <i>I saw a dog.</i>",
+  "Use <b>the</b> the second time, or when only one exists: <i>The dog was big. The sun. The Prime Minister.</i>",
+  "Use <b>the</b> with rivers, seas, mountain ranges, and some countries: the Cauvery, the Himalayas, the USA",
+  "<b>No article</b> for general plurals and uncountables: <i>Dogs are loyal. Milk is healthy.</i>",
+  "<b>No article</b> for meals, languages, sports, most cities and countries: <i>have lunch, speak Tamil, play cricket, live in Chennai</i>"
+ ],
+ ex:[
+  "[s:I] [v:have] [k:a] [o:sister] [o:and] [k:an] [o:elder brother].",
+  "[s:I] [v:bought] [k:a] [o:shirt]. [k:The] [s:shirt] [v:is] [o:blue].",
+  "[s:Please] [v:close] [k:the] [o:door].  (the door we both see)",
+  "[s:She] [v:goes] [o:to] [k:the] [o:gym] [k:after] [o:work]."
+ ],
+ tip:"Ask yourself: <b>'Which one?'</b> If the listener knows exactly which one → <b>the</b>. If not → <b>a/an</b>.",
+ mist:[
+  ["I am engineer.","I am an engineer.","Jobs need a/an."],
+  ["He is in hospital since Monday.","He has been in the hospital since Monday.","Indian/US English uses 'the hospital' (British: 'in hospital' is also OK)."],
+  ["The life is beautiful.","Life is beautiful.","General ideas take no article."]
+ ],
+ speak:["Introduce your family: 'I have a… The… is…'","Describe your room: 'There is a bed. The bed is near the window.'"],
+ quiz:[
+  {q:"She is ___ honest person.", o:["a","an","the"], a:1, e:"'honest' starts with a vowel SOUND (silent h) → 'an'."},
+  {q:"Which is correct?", o:["I play the cricket.","I play cricket."], a:1, e:"No article with sports."},
+  {q:"I saw a cat. ___ cat was black.", o:["A","The"], a:1, e:"Second mention → 'the'."}
+ ]},
+
+{part:1, t:"Pronouns", lvl:"Essential",
+ what:"A pronoun replaces a noun so you do not repeat it. <i>Ravi is tall. <b>He</b> plays basketball.</i>",
+ why:"Using the wrong pronoun form (me vs I, his vs he) instantly sounds wrong. These forms are used in almost every sentence.",
+ rules:[
+  "<b>Subject</b> (does the action): I, you, he, she, it, we, they",
+  "<b>Object</b> (receives the action): me, you, him, her, it, us, them",
+  "<b>Possessive adjective</b> (before a noun): my, your, his, her, its, our, their",
+  "<b>Possessive pronoun</b> (alone): mine, yours, his, hers, ours, theirs",
+  "<b>Reflexive</b> (same person): myself, yourself, himself, herself, itself, ourselves, themselves",
+  "After a preposition, use the object form: <i>with me, for him, between us</i>"
+ ],
+ ex:[
+  "[s:She] [v:called] [o:me] [k:yesterday].",
+  "[s:This] [v:is] [k:my] [o:pen]. [s:That one] [v:is] [k:yours].",
+  "[s:They] [v:did] [o:it] [k:themselves].",
+  "[s:My friend and I] [v:went] [o:to the beach]."
+ ],
+ tip:"Not sure about 'my friend and I' or 'my friend and me'? Remove 'my friend'. <i>I went</i> ✓ / <i>Me went</i> ✗ → so 'my friend and <b>I</b> went'.",
+ mist:[
+  ["Myself Arun.","I am Arun. / My name is Arun.","'Myself' cannot be a subject."],
+  ["Me and him went to the shop.","He and I went to the shop.","Subjects use subject forms; put 'I' last politely."],
+  ["This book is her's.","This book is hers.","Possessive pronouns never take an apostrophe."]
+ ],
+ speak:["Introduce yourself in 3 sentences without saying 'Myself'.","Talk about a friend: what he/she likes, what you do with him/her."],
+ quiz:[
+  {q:"Can you help ___?", o:["I","me","my"], a:1, e:"After a verb we need the object form 'me'."},
+  {q:"Best way to introduce yourself?", o:["Myself Kumar.","I'm Kumar."], a:1, e:"'Myself' is reflexive; it cannot start a sentence as the subject."},
+  {q:"The dog wagged ___ tail.", o:["it's","its"], a:1, e:"'its' = belonging to it. 'it's' = it is."}
+ ]},
+
+{part:1, t:"Subject–Verb Agreement", lvl:"Essential",
+ what:"The verb must match its subject. A singular subject takes a singular verb; a plural subject takes a plural verb.",
+ why:"'He go' or 'They goes' is one of the most common spoken errors. Getting this right makes you sound instantly better.",
+ rules:[
+  "In the present simple, <b>he / she / it / one person</b> → verb + <b>s/es</b>: <i>She works.</i>",
+  "<b>I / you / we / they / plural</b> → no s: <i>They work.</i>",
+  "be: I <b>am</b> · he/she/it <b>is</b> · you/we/they <b>are</b>",
+  "have: he/she/it <b>has</b> · others <b>have</b>",
+  "do: he/she/it <b>does</b> · others <b>do</b>",
+  "Words like <i>everyone, everybody, each, nobody, someone</i> are singular: <i>Everyone <b>is</b> here.</i>",
+  "Ignore the words in between: <i>The box <u>of apples</u> <b>is</b> heavy.</i>"
+ ],
+ ex:[
+  "[s:My mother] [v:wakes] [o:up] [k:at 5 a.m.]",
+  "[s:My parents] [v:wake] [o:up] [k:early].",
+  "[s:She] [h:doesn't] [v:like] [o:spicy food].",
+  "[s:Everybody] [v:loves] [o:holidays]."
+ ],
+ tip:"The <b>-s</b> goes on the verb only once: <i>He <b>does</b>n't know</i> (not <i>doesn't knows</i>).",
+ mist:[
+  ["He don't know.","He doesn't know.","he → does"],
+  ["She have two kids.","She has two kids.","he/she/it → has"],
+  ["Each of the students have a book.","Each of the students has a book.","'Each' is singular."]
+ ],
+ speak:["Describe the daily routine of a family member using he/she (watch the -s!).","Say what 3 friends like: 'Raj likes…, Priya and Sam like…'"],
+ quiz:[
+  {q:"My father ___ tea every morning.", o:["drink","drinks","drinking"], a:1, e:"'My father' = he → 'drinks'."},
+  {q:"Does she ___ English?", o:["speaks","speak"], a:1, e:"'does' already has the -s. Main verb stays base form."},
+  {q:"The list of names ___ on the wall.", o:["is","are"], a:0, e:"Subject is 'the list' (singular). Ignore 'of names'."}
+ ]},
+
+{part:1, t:"Adjectives & Comparisons", lvl:"Essential",
+ what:"Adjectives describe nouns. We change them to compare two things (<b>comparative</b>) or to say something is the top of a group (<b>superlative</b>).",
+ why:"You compare things all the time: prices, places, phones, people. Wrong forms like 'more better' are very common.",
+ rules:[
+  "Adjective goes <b>before</b> the noun: <i>a red car</i> (not 'a car red')",
+  "Short words (1 syllable): add <b>-er / -est</b> → tall, taller, the tallest",
+  "Ending in -y: <b>-ier / -iest</b> → happy, happier, the happiest",
+  "Long words (2+ syllables): <b>more / the most</b> → beautiful, more beautiful, the most beautiful",
+  "Irregular: good → better → best · bad → worse → worst · far → farther/further → farthest",
+  "Use <b>than</b> after a comparative: <i>Chennai is hotter <b>than</b> Ooty.</i>",
+  "Equal: <b>as … as</b> → <i>She is as tall as her brother.</i>"
+ ],
+ ex:[
+  "[s:This phone] [v:is] [k:cheaper than] [o:that one].",
+  "[s:Today] [v:is] [k:the hottest] [o:day of the year].",
+  "[s:Train travel] [v:is] [k:more comfortable than] [o:bus travel].",
+  "[s:My English] [v:is getting] [k:better] [o:every day]."
+ ],
+ tip:"Never use two comparatives together: ✗ <i>more better</i>, ✗ <i>most tallest</i>.",
+ mist:[
+  ["This is more better.","This is better.","'better' is already comparative."],
+  ["He is elder than me.","He is older than me.","Use 'older than'; 'elder' only before a noun (my elder brother)."],
+  ["She is best singer.","She is the best singer.","Superlatives need 'the'."]
+ ],
+ speak:["Compare two cities you know – use 3 comparatives.","Talk about the best and worst food you have ever eaten."],
+ quiz:[
+  {q:"An elephant is ___ than a horse.", o:["biger","bigger","more big"], a:1, e:"Short word: double the final consonant + er → bigger."},
+  {q:"This is the ___ film I have seen.", o:["most good","best","better"], a:1, e:"good → better → best (irregular)."},
+  {q:"She is as clever ___ her sister.", o:["than","as","like"], a:1, e:"Equal comparison: as … as."}
+ ]},
+
+{part:1, t:"Adverbs & Word Order", lvl:"Useful",
+ what:"Adverbs tell <b>how, when, where, how often</b> or <b>how much</b>. Their position in the sentence matters.",
+ why:"Putting 'always', 'never', 'usually' in the wrong place is very common. Correct order makes your speech smooth.",
+ rules:[
+  "Manner (how): usually <b>after the verb or object</b> → <i>She speaks English well.</i>",
+  "Frequency (always, usually, often, sometimes, rarely, never): <b>before the main verb</b> → <i>I always walk to work.</i>",
+  "…but <b>after 'be'</b>: <i>He is always late.</i>",
+  "…and <b>between helper and main verb</b>: <i>I have never seen snow.</i>",
+  "Time (today, yesterday): usually at the <b>end</b> or <b>start</b>",
+  "Degree (very, too, quite, really, enough): before the adjective → <i>very hot, too expensive</i>; but <b>enough</b> comes after → <i>old enough</i>"
+ ],
+ ex:[
+  "[s:I] [k:usually] [v:have] [o:idli] [o:for breakfast].",
+  "[s:She] [v:is] [k:never] [o:angry].",
+  "[s:They] [h:have] [k:already] [v:left].",
+  "[s:This bag] [v:is] [k:too] [o:heavy] [o:for me]."
+ ],
+ tip:"<b>very</b> = a lot (OK). <b>too</b> = more than you want (a problem). <i>The tea is very hot</i> vs <i>The tea is too hot to drink.</i>",
+ mist:[
+  ["I go always to temple.","I always go to the temple.","Frequency adverb goes before the main verb."],
+  ["He speaks very well English.","He speaks English very well.","Don't put the adverb between verb and object."],
+  ["She is enough old.","She is old enough.","'enough' comes after the adjective."]
+ ],
+ speak:["Tell your weekly routine using always, usually, sometimes, never.","Describe something that is 'too expensive' and something 'cheap enough'."],
+ quiz:[
+  {q:"Choose the correct sentence.", o:["I eat never meat.","I never eat meat."], a:1, e:"Frequency adverb before the main verb."},
+  {q:"He ___ late for class.", o:["always is","is always"], a:1, e:"With 'be', the adverb comes after it."}
+ ]},
+/* ================= PART 2: TENSES ================= */
+{part:2, t:"Simple Present", lvl:"Essential",
+ what:"Used for <b>habits, routines, facts</b> and things that are always true.",
+ why:"This is the tense you use to talk about yourself, your job, your family and daily life.",
+ rules:[
+  "Positive: <b>Subject + V1</b> (+s/es for he/she/it) → <i>I work. She works.</i>",
+  "Negative: <b>Subject + do/does + not + V1</b> → <i>I don't work. She doesn't work.</i>",
+  "Question: <b>Do/Does + Subject + V1?</b> → <i>Do you work? Does she work?</i>",
+  "Signal words: always, usually, every day, on Mondays, often, never",
+  "Facts: <i>Water boils at 100°C. The sun rises in the east.</i>"
+ ],
+ ex:[
+  "[s:I] [v:live] [o:in Chennai].",
+  "[s:My sister] [v:teaches] [o:maths] [k:in a school].",
+  "[s:We] [h:don't] [v:eat] [o:meat] [k:on Fridays].",
+  "[h:Does] [s:he] [v:play] [o:football]?"
+ ],
+ tip:"Spelling of -s: go → <b>goes</b>, watch → <b>watches</b>, study → <b>studies</b>, play → <b>plays</b>.",
+ mist:[
+  ["She go to college.","She goes to college.","he/she/it → verb + s."],
+  ["Do she like it?","Does she like it?","he/she/it → does."],
+  ["I am going to office daily.","I go to the office every day.","Daily habit → simple present, not continuous."]
+ ],
+ speak:["Describe your typical weekday from morning to night.","Ask someone 5 'Do you…?' questions about their habits."],
+ quiz:[
+  {q:"She ___ to music every night.", o:["listen","listens","listening"], a:1, e:"she → verb + s."},
+  {q:"___ your parents live with you?", o:["Does","Do"], a:1, e:"'your parents' = they → Do."},
+  {q:"Which shows a habit?", o:["I am drinking tea now.","I drink tea every morning."], a:1, e:"Routine → simple present."}
+ ]},
+
+{part:2, t:"Present Continuous", lvl:"Essential",
+ what:"Used for actions happening <b>now</b>, temporary situations, and fixed future plans.",
+ why:"Speakers often use it where it is wrong (I am knowing) or forget it where it is needed. Knowing the difference from simple present is key.",
+ rules:[
+  "Form: <b>Subject + am/is/are + V-ing</b> → <i>I am working.</i>",
+  "Negative: <i>She is not (isn't) sleeping.</i> · Question: <i>Are you coming?</i>",
+  "Now: <i>Look! It's raining.</i>",
+  "Temporary: <i>I'm staying with my uncle this month.</i>",
+  "Future plan (arranged): <i>We're meeting at 6 tomorrow.</i>",
+  "<b>Stative verbs are NOT used in -ing</b>: know, understand, like, love, hate, want, need, believe, own, belong, seem, have (= possess)"
+ ],
+ ex:[
+  "[s:I] [h:am] [v:reading] [o:a book] [k:right now].",
+  "[s:They] [h:are] [v:building] [o:a new bridge] [k:these days].",
+  "[s:She] [h:isn't] [v:answering] [o:her phone].",
+  "[h:Are] [s:you] [v:coming] [o:to the party] [k:tonight]?"
+ ],
+ tip:"Simple present = <b>always/usually</b>. Present continuous = <b>now/around now</b>. <i>I usually walk, but today I'm taking an auto.</i>",
+ mist:[
+  ["I am knowing him.","I know him.","'know' is a stative verb."],
+  ["He is having two cars.","He has two cars.","'have' meaning possess is stative."],
+  ["I am understanding.","I understand.","'understand' is stative."]
+ ],
+ speak:["Look around and say 5 things people are doing right now.","Say what you are doing this week that is different from usual."],
+ quiz:[
+  {q:"Shh! The baby ___.", o:["sleeps","is sleeping"], a:1, e:"Happening now → present continuous."},
+  {q:"Which is correct?", o:["I am wanting coffee.","I want coffee."], a:1, e:"'want' is stative – no -ing."},
+  {q:"We ___ dinner with friends tomorrow.", o:["are having","have had"], a:0, e:"Arranged future plan → present continuous. ('have' = eat is not stative.)"}
+ ]},
+
+{part:2, t:"Present Perfect", lvl:"Essential",
+ what:"Connects the <b>past to now</b>: experiences, recent news, and actions that started in the past and continue.",
+ why:"There is no exact Tamil match, so it feels strange. But native speakers use it constantly: <i>Have you eaten? I've lost my keys.</i>",
+ rules:[
+  "Form: <b>Subject + have/has + V3</b> (past participle) → <i>I have finished.</i>",
+  "Experience (no exact time): <i>I have visited Delhi twice.</i>",
+  "Recent result: <i>I've lost my phone</i> (it's still lost now).",
+  "Up to now: <i>She has lived here <b>for</b> 5 years / <b>since</b> 2021.</i>",
+  "<b>for</b> + a period (for 3 days) · <b>since</b> + a start point (since Monday)",
+  "Signal words: ever, never, just, already, yet, so far, recently",
+  "<b>Never with a finished time</b>: ✗ <i>I have seen him yesterday.</i> → ✓ <i>I saw him yesterday.</i>"
+ ],
+ ex:[
+  "[h:Have] [s:you] [k:ever] [v:eaten] [o:sushi]?",
+  "[s:I] [h:have] [k:just] [v:finished] [o:my lunch].",
+  "[s:She] [h:hasn't] [v:called] [o:me] [k:yet].",
+  "[s:We] [h:have] [v:known] [o:each other] [k:since school]."
+ ],
+ tip:"Ask: <b>Is the time finished and mentioned?</b> Yes (yesterday, in 2019) → simple past. No → present perfect.",
+ mist:[
+  ["I have gone to Mumbai last year.","I went to Mumbai last year.","Finished time → simple past."],
+  ["I am living here since 2015.","I have lived (have been living) here since 2015.","'since' → present perfect."],
+  ["Did you eat? (meaning: at any time today, still relevant)","Have you eaten?","Both are heard; 'Have you eaten' is the standard way to ask."]
+ ],
+ speak:["Tell 3 things you have done in your life and 3 you have never done.","Say how long you have lived in your house and known your best friend."],
+ quiz:[
+  {q:"I ___ this movie three times.", o:["saw","have seen"], a:1, e:"Experience, no finished time → present perfect."},
+  {q:"She has worked here ___ 2020.", o:["for","since"], a:1, e:"2020 is a starting point → since."},
+  {q:"Which is correct?", o:["I have met him yesterday.","I met him yesterday."], a:1, e:"'yesterday' is finished time → simple past."}
+ ]},
+
+{part:2, t:"Present Perfect Continuous", lvl:"Useful",
+ what:"For an action that started in the past and is <b>still going on</b> (or just stopped), focusing on the <b>duration</b>.",
+ why:"It is the natural way to answer 'How long…?' questions.",
+ rules:[
+  "Form: <b>Subject + have/has + been + V-ing</b> → <i>I have been waiting.</i>",
+  "Use with <b>for / since / how long</b>: <i>How long have you been learning English?</i>",
+  "Just stopped, with visible result: <i>Why are you wet? – I've been swimming.</i>",
+  "Stative verbs still use present perfect simple: <i>I have known him for years</i> (not 'have been knowing')"
+ ],
+ ex:[
+  "[s:I] [h:have been] [v:learning] [o:English] [k:for six months].",
+  "[s:It] [h:has been] [v:raining] [k:since morning].",
+  "[s:She] [h:has been] [v:working] [o:all day], [o:so she is tired].",
+  "[k:How long] [h:have] [s:you] [h:been] [v:waiting]?"
+ ],
+ tip:"Present perfect = <b>result</b> (I've written 3 emails). Perfect continuous = <b>activity/duration</b> (I've been writing emails all morning).",
+ mist:[
+  ["I am waiting here for one hour.","I have been waiting here for an hour.","Duration up to now → have been + -ing."],
+  ["I have been knowing her since childhood.","I have known her since childhood.","'know' is stative."]
+ ],
+ speak:["Answer: How long have you been living in your city / working / learning English?","Explain why you are tired today using 'I've been…'"],
+ quiz:[
+  {q:"They ___ for two hours.", o:["are talking","have been talking"], a:1, e:"Duration up to now → present perfect continuous."},
+  {q:"Pick the correct one.", o:["I've been owning this bike for years.","I've owned this bike for years."], a:1, e:"'own' is stative."}
+ ]},
+
+{part:2, t:"Simple Past & Irregular Verbs", lvl:"Essential",
+ what:"For actions that <b>started and finished in the past</b>, often at a known time.",
+ why:"Every story you tell – about your day, your weekend, your childhood – uses the simple past.",
+ rules:[
+  "Regular verbs add <b>-ed</b>: work → worked, play → played, stop → stopped, study → studied",
+  "Irregular verbs change form – learn them by heart: go → went, eat → ate, see → saw, buy → bought, come → came, take → took, give → gave, tell → told, think → thought",
+  "Negative: <b>did not (didn't) + V1</b> → <i>I didn't go.</i>",
+  "Question: <b>Did + subject + V1?</b> → <i>Did you go?</i>",
+  "be: I/he/she/it <b>was</b> · you/we/they <b>were</b>",
+  "Signal words: yesterday, last week, ago, in 2019, when I was young"
+ ],
+ ex:[
+  "[s:I] [v:went] [o:to Pondicherry] [k:last weekend].",
+  "[s:We] [v:ate] [o:biryani] [k:yesterday].",
+  "[s:She] [h:didn't] [v:come] [o:to the class].",
+  "[h:Did] [s:you] [v:watch] [o:the match] [k:last night]?"
+ ],
+ tip:"After <b>did / didn't</b>, the verb goes back to its base form. The past is shown only once: ✗ <i>didn't went</i> → ✓ <i>didn't go</i>.",
+ mist:[
+  ["I didn't went.","I didn't go.","'did' already shows past."],
+  ["Did you saw it?","Did you see it?","Base form after 'did'."],
+  ["Yesterday I go to the market.","Yesterday I went to the market.","Finished past → past form."]
+ ],
+ speak:["Tell what you did last Sunday in 6 sentences.","Practise 20 irregular verbs aloud: go-went-gone, eat-ate-eaten…"],
+ quiz:[
+  {q:"I ___ a new phone last week.", o:["buyed","bought","buy"], a:1, e:"buy → bought (irregular)."},
+  {q:"She didn't ___ the answer.", o:["knew","know"], a:1, e:"After didn't → base form."},
+  {q:"They ___ at home yesterday.", o:["was","were"], a:1, e:"they → were."}
+ ]},
+
+{part:2, t:"Past Continuous", lvl:"Essential",
+ what:"For an action that was <b>in progress at a time in the past</b>, often interrupted by another action.",
+ why:"It sets the scene in stories: <i>I was walking home when it started to rain.</i>",
+ rules:[
+  "Form: <b>Subject + was/were + V-ing</b> → <i>I was sleeping.</i>",
+  "Longer background action (past continuous) + short interrupting action (simple past): <i>I was cooking <b>when</b> the phone rang.</i>",
+  "Two actions at the same time: <i>She was reading <b>while</b> I was watching TV.</i>",
+  "At a specific past time: <i>At 8 p.m. yesterday, we were having dinner.</i>"
+ ],
+ ex:[
+  "[s:I] [h:was] [v:driving] [k:when] [s:you] [v:called].",
+  "[s:They] [h:were] [v:playing] [o:cricket] [k:at 5 o'clock].",
+  "[k:While] [s:she] [h:was] [v:studying], [s:her brother] [h:was] [v:watching] [o:TV].",
+  "[s:What] [h:were] [s:you] [v:doing] [k:last night at 10]?"
+ ],
+ tip:"Think of a film: past continuous = the <b>background scene</b>; simple past = the <b>event</b> that happens in it.",
+ mist:[
+  ["When I was reaching home, it rained.","When I reached home, it was raining.","Short action = simple past; background = continuous."],
+  ["I was knowing the answer.","I knew the answer.","Stative verb."]
+ ],
+ speak:["Say what you were doing at 7 a.m., 1 p.m. and 9 p.m. yesterday.","Tell a short story that starts 'I was … when …'"],
+ quiz:[
+  {q:"I ___ a shower when the lights went out.", o:["took","was taking"], a:1, e:"Background action in progress → past continuous."},
+  {q:"While we ___ dinner, a friend arrived.", o:["were having","had"], a:0, e:"Action in progress + interruption."}
+ ]},
+
+{part:2, t:"Past Perfect", lvl:"Useful",
+ what:"For an action that happened <b>before another past action</b>. It is the 'past of the past'.",
+ why:"It makes the order of events clear when you tell stories or explain problems.",
+ rules:[
+  "Form: <b>Subject + had + V3</b> → <i>I had eaten.</i>",
+  "Earlier action = past perfect; later action = simple past: <i>When I reached the station, the train <b>had left</b>.</i>",
+  "Common with: before, after, already, by the time, when",
+  "Past perfect continuous (<b>had been + V-ing</b>) shows duration before a past moment: <i>I had been waiting for an hour when he arrived.</i>",
+  "If 'before/after' already makes the order clear, simple past is also fine: <i>I ate before I left.</i>"
+ ],
+ ex:[
+  "[s:The film] [h:had] [k:already] [v:started] [k:when] [s:we] [v:arrived].",
+  "[s:She] [h:had] [k:never] [v:seen] [o:the sea] [k:before] [o:that trip].",
+  "[k:By the time] [s:I] [v:woke up], [s:everyone] [h:had] [v:left].",
+  "[s:He] [v:was] [o:tired] [k:because] [s:he] [h:had been] [v:working] [o:all night]."
+ ],
+ tip:"Draw a line: ●(had + V3) ——— ●(V2) ——— NOW. The first dot gets 'had'.",
+ mist:[
+  ["When I reached, the bus already left.","When I reached, the bus had already left.","Earlier action → had + V3."],
+  ["I had went there.","I had gone there.","had + past participle (V3), not V2."]
+ ],
+ speak:["Tell about a time you arrived somewhere late – what had already happened?","Say 3 things you had never done before you were 18."],
+ quiz:[
+  {q:"When I got home, my mother ___ dinner.", o:["cooked","had cooked"], a:1, e:"Cooking happened before getting home."},
+  {q:"Choose the correct form.", o:["had ate","had eaten"], a:1, e:"had + V3 (eaten)."}
+ ]},
+
+{part:2, t:"Future: will, going to, present continuous", lvl:"Essential",
+ what:"English has several ways to talk about the future. Each one has a slightly different meaning.",
+ why:"Using 'will' for everything sounds unnatural. Native speakers choose based on <b>when the decision was made</b>.",
+ rules:[
+  "<b>will + V1</b> – decision made now, promises, offers, predictions from opinion: <i>I'll help you. I think it will rain.</i>",
+  "<b>be going to + V1</b> – plan already decided, or prediction from evidence: <i>I'm going to buy a car. Look at those clouds – it's going to rain.</i>",
+  "<b>present continuous</b> – fixed arrangement with time/place: <i>I'm meeting the doctor at 4.</i>",
+  "<b>simple present</b> – timetables: <i>The train leaves at 6.30.</i>",
+  "After <b>when, if, before, after, as soon as</b> use the present, not will: <i>Call me when you <b>reach</b>.</i>"
+ ],
+ ex:[
+  "[s:The phone is ringing.] [s:I]'[h:ll] [v:get] [o:it].  (decided now)",
+  "[s:We] [h:are going to] [v:visit] [o:Kerala] [k:in December].  (plan)",
+  "[s:I] [h:am] [v:seeing] [o:my friend] [k:tonight at 8].  (arranged)",
+  "[s:The flight] [v:lands] [k:at 9.45].  (timetable)"
+ ],
+ tip:"<i>I'll</i> = I decide <b>now</b>. <i>I'm going to</i> = I decided <b>before</b>.",
+ mist:[
+  ["I will call you when I will reach.","I will call you when I reach.","Present tense after 'when'."],
+  ["Tomorrow I am going to office.","Tomorrow I'm going to the office. / I'll go to the office tomorrow.","Add 'the'; both futures are fine."],
+  ["Wait, I am helping you.","Wait, I'll help you.","Offer decided now → will."]
+ ],
+ speak:["Say 3 plans for next month with 'going to'.","Make 3 offers or promises with 'I'll…'"],
+ quiz:[
+  {q:"It's cold. ___ close the window.", o:["I'm going to","I'll"], a:1, e:"Decision made at this moment → will."},
+  {q:"I'll text you as soon as I ___ home.", o:["will get","get"], a:1, e:"After 'as soon as' use the present."},
+  {q:"Look at the dark sky! It ___ rain.", o:["is going to","will"], a:0, e:"Prediction based on evidence you can see → going to."}
+ ]},
+
+{part:2, t:"Future Continuous & Future Perfect", lvl:"Advanced",
+ what:"<b>Future continuous</b> = an action in progress at a future time. <b>Future perfect</b> = an action completed before a future time.",
+ why:"Useful for polite questions and deadlines: <i>Will you be using the car tonight? I'll have finished by Friday.</i>",
+ rules:[
+  "Future continuous: <b>will be + V-ing</b> → <i>This time tomorrow, I'll be flying to Delhi.</i>",
+  "Polite question about plans: <i>Will you be joining us for dinner?</i>",
+  "Future perfect: <b>will have + V3</b> → <i>By 2030, I will have saved enough.</i>",
+  "Common with <b>by</b> (= not later than): by tomorrow, by next week, by the time…"
+ ],
+ ex:[
+  "[k:At 10 tomorrow], [s:I]'[h:ll be] [v:sitting] [o:in an exam].",
+  "[h:Will] [s:you] [h:be] [v:using] [o:your laptop] [k:this evening]?",
+  "[s:She] [h:will have] [v:finished] [o:the course] [k:by June].",
+  "[k:By the time] [s:you] [v:arrive], [s:we]'[h:ll have] [v:eaten]."
+ ],
+ tip:"These are optional for fluency. Master <i>will / going to / present continuous</i> first.",
+ mist:[
+  ["I will finish it till Monday.","I will have finished it by Monday.","Deadline → 'by', not 'till'."]
+ ],
+ speak:["Say what you'll be doing at 9 p.m. tonight and at noon on Sunday.","Say two things you will have done by the end of this year."],
+ quiz:[
+  {q:"Don't call at 8 – I ___ dinner.", o:["will have","will be having"], a:1, e:"In progress at a future time → will be + -ing."},
+  {q:"I will have completed it ___ Friday.", o:["till","by"], a:1, e:"Deadline → by."}
+ ]},
+
+{part:2, t:"Used to & Would (past habits)", lvl:"Useful",
+ what:"<b>used to + V1</b> describes past habits or states that are <b>no longer true</b>.",
+ why:"Perfect for talking about childhood and change: <i>I used to live in a village.</i>",
+ rules:[
+  "Positive: <b>used to + V1</b> → <i>I used to play cricket every evening.</i>",
+  "Negative: <b>didn't use to</b> → <i>I didn't use to like coffee.</i>",
+  "Question: <b>Did you use to…?</b>",
+  "<b>would + V1</b> can also describe repeated past actions (not states): <i>Every summer, we would visit our grandparents.</i>",
+  "Don't confuse with <b>be used to + V-ing</b> = be familiar with: <i>I'm used to waking up early.</i>"
+ ],
+ ex:[
+  "[s:I] [h:used to] [v:walk] [o:to school] [k:every day].",
+  "[s:This area] [h:used to] [v:be] [o:a paddy field].",
+  "[s:She] [h:didn't use to] [v:speak] [o:English], [o:but now she does].",
+  "[s:I]'[h:m used to] [v:driving] [o:in heavy traffic] [k:now]."
+ ],
+ tip:"<i>I <b>used to</b> drink tea</i> = before, not now. <i>I <b>am used to</b> drinking tea</i> = it's normal for me.",
+ mist:[
+  ["I am used to go there.","I used to go there.","Past habit → used to + V1."],
+  ["I use to play.","I used to play.","Write and say 'used to' for the past."]
+ ],
+ speak:["Say 5 things you used to do as a child that you don't do now.","Say 2 things you are used to now that were hard before."],
+ quiz:[
+  {q:"When I was young, I ___ climb trees.", o:["used to","was used to"], a:0, e:"Past habit → used to + V1."},
+  {q:"She is used to ___ late.", o:["work","working"], a:1, e:"be used to + V-ing."}
+ ]},
+
+/* ================= PART 3: MODALS ================= */
+{part:3, t:"Can, Could, Be able to", lvl:"Essential",
+ what:"Modal verbs add meaning to the main verb. <b>can/could</b> show ability, permission and requests.",
+ why:"You use these every day to ask, offer and say what you can or can't do.",
+ rules:[
+  "Modal + <b>base verb</b> (no to, no s): <i>She can swim</i> (not 'can swims', not 'can to swim')",
+  "<b>can</b> = present ability/permission: <i>I can drive. You can sit here.</i>",
+  "<b>could</b> = past ability: <i>I could run fast when I was young.</i>",
+  "<b>could</b> = polite request/possibility: <i>Could you help me? It could rain.</i>",
+  "<b>be able to</b> = ability in other tenses: <i>I will be able to come. I have been able to save.</i>",
+  "Negative: can't / cannot · couldn't"
+ ],
+ ex:[
+  "[s:I] [h:can] [v:speak] [o:three languages].",
+  "[h:Could] [s:you] [v:pass] [o:the salt], [o:please]?",
+  "[s:She] [h:couldn't] [v:sleep] [k:last night].",
+  "[s:I] [h:won't be able to] [v:come] [k:tomorrow]."
+ ],
+ tip:"<b>Can you…?</b> = normal. <b>Could you…?</b> = more polite. Use 'could' with elders, strangers and at work.",
+ mist:[
+  ["He can speaks English.","He can speak English.","No -s after a modal."],
+  ["I can able to do it.","I can do it. / I am able to do it.","Use one, not both."],
+  ["I will can come.","I will be able to come.","Two modals can't go together."]
+ ],
+ speak:["Say 5 things you can do and 3 you can't.","Make 3 polite requests with 'Could you…?'"],
+ quiz:[
+  {q:"She ___ swim when she was five.", o:["can","could"], a:1, e:"Past ability → could."},
+  {q:"Pick the correct sentence.", o:["I can to cook.","I can cook."], a:1, e:"No 'to' after can."},
+  {q:"I hope I ___ visit you next year.", o:["will can","will be able to"], a:1, e:"Future ability → will be able to."}
+ ]},
+
+{part:3, t:"Must, Have to, Should", lvl:"Essential",
+ what:"These show <b>obligation</b> (must, have to) and <b>advice</b> (should).",
+ why:"Giving advice and talking about rules is part of daily conversation.",
+ rules:[
+  "<b>must</b> = strong obligation from the speaker or a rule: <i>You must wear a helmet.</i>",
+  "<b>have to</b> = obligation from outside: <i>I have to work on Saturday.</i>",
+  "<b>mustn't</b> = not allowed: <i>You mustn't smoke here.</i>",
+  "<b>don't have to</b> = not necessary (your choice): <i>You don't have to come.</i>",
+  "<b>should / shouldn't</b> = advice: <i>You should drink more water.</i>",
+  "Past of must/have to = <b>had to</b>: <i>I had to wait for an hour.</i>",
+  "Past regret: <b>should have + V3</b> → <i>I should have studied more.</i>"
+ ],
+ ex:[
+  "[s:You] [h:should] [v:see] [o:a doctor].",
+  "[s:I] [h:have to] [v:pay] [o:the electricity bill] [k:today].",
+  "[s:You] [h:mustn't] [v:use] [o:your phone] [k:while driving].",
+  "[s:We] [h:don't have to] [v:wear] [o:a uniform] [k:on Fridays]."
+ ],
+ tip:"<b>mustn't</b> ≠ <b>don't have to</b>. 'You mustn't go' = it is forbidden. 'You don't have to go' = you can if you want.",
+ mist:[
+  ["You must to come.","You must come.","No 'to' after must."],
+  ["I must go yesterday.","I had to go yesterday.","Past → had to."],
+  ["She should goes.","She should go.","Base verb after should."]
+ ],
+ speak:["Give a friend 3 pieces of advice for a job interview.","Say 3 things you have to do this week and 2 you don't have to do."],
+ quiz:[
+  {q:"Tomorrow is a holiday. You ___ come to class.", o:["mustn't","don't have to"], a:1, e:"Not necessary → don't have to."},
+  {q:"You look tired. You ___ rest.", o:["should","must to"], a:0, e:"Advice → should + base verb."},
+  {q:"I missed the bus, so I ___ take an auto.", o:["must","had to"], a:1, e:"Past obligation → had to."}
+ ]},
+
+{part:3, t:"May, Might, Would, Shall", lvl:"Useful",
+ what:"<b>may/might</b> = possibility and polite permission. <b>would</b> = polite offers, wishes and imagined situations. <b>shall</b> = suggestions.",
+ why:"These make your English sound polite and natural, especially in requests and offers.",
+ rules:[
+  "<b>may / might</b> = maybe: <i>It might rain later. He may be late.</i> (might = a little less sure)",
+  "<b>May I…?</b> = very polite permission: <i>May I come in?</i>",
+  "<b>Would you like…?</b> = polite offer: <i>Would you like some tea?</i>",
+  "<b>I'd like…</b> = polite 'I want': <i>I'd like a coffee, please.</i>",
+  "<b>Would you mind + V-ing?</b> = very polite request: <i>Would you mind closing the door?</i>",
+  "<b>Shall I/we…?</b> = offer or suggestion: <i>Shall I open the window? Shall we go?</i>"
+ ],
+ ex:[
+  "[s:I] [h:might] [v:visit] [o:my cousin] [k:this weekend].",
+  "[h:Would] [s:you] [v:like] [o:some water]?",
+  "[s:I]'[h:d] [v:like] [o:to book a table for two].",
+  "[h:Shall] [s:we] [v:start] [o:the meeting]?"
+ ],
+ tip:"Replace 'I want' with <b>'I'd like'</b> when speaking to shopkeepers, waiters and strangers – it sounds far more polite.",
+ mist:[
+  ["Would you mind to help me?","Would you mind helping me?","mind + V-ing."],
+  ["I want one coffee.","I'd like a coffee, please.","More polite and natural."]
+ ],
+ speak:["Order food at a restaurant using 'I'd like…' and 'Could I have…?'","Say 3 things that might happen this weekend."],
+ quiz:[
+  {q:"Most polite request?", o:["Give me the file.","Would you mind giving me the file?"], a:1, e:"'Would you mind + -ing' is very polite."},
+  {q:"___ I carry your bag for you?", o:["Shall","Would"], a:0, e:"Offer → Shall I…?"}
+ ]},
+/* ================= PART 4: BUILDING SENTENCES ================= */
+{part:4, t:"Asking Questions", lvl:"Essential",
+ what:"English questions have their own word order: the <b>helper verb comes before the subject</b>.",
+ why:"In Tamil you just add '-aa' at the end (<i>Nee saapittiyaa?</i>). In English you must move words. Asking questions correctly is essential for conversation.",
+ rules:[
+  "Yes/No question: <b>Helper + Subject + Verb?</b> → <i>Are you coming? Do you like it? Did she call? Have you eaten? Can he swim?</i>",
+  "Wh- question: <b>Wh-word + Helper + Subject + Verb?</b> → <i>Where do you live? What are you doing? Why did he leave?</i>",
+  "Wh-words: what, where, when, why, who, which, whose, how, how much, how many, how long, how often",
+  "If <b>who/what is the subject</b>, no do/does/did: <i>Who called you?</i> (not 'Who did call you?')",
+  "Indirect (polite) question uses normal order: <i>Can you tell me where the station <b>is</b>?</i>"
+ ],
+ ex:[
+  "[k:Where] [h:do] [s:you] [v:work]?",
+  "[k:What time] [h:does] [s:the shop] [v:open]?",
+  "[k:Why] [h:are] [s:you] [v:laughing]?",
+  "[k:How long] [h:have] [s:you] [v:lived] [o:here]?",
+  "[k:Who] [v:told] [o:you]?  (who = subject, no 'did')"
+ ],
+ tip:"Remember the pattern <b>QASI</b>: Question word, Auxiliary (helper), Subject, Infinitive (verb).",
+ mist:[
+  ["Where you are going?","Where are you going?","Helper before subject."],
+  ["What you want?","What do you want?","Add 'do'."],
+  ["Can you tell me where is the bank?","Can you tell me where the bank is?","Indirect question → normal order."],
+  ["You came yesterday?","Did you come yesterday?","Use 'did' for past questions (rising tone alone is very informal)."]
+ ],
+ speak:["Imagine meeting someone new – ask 8 questions using different Wh-words.","Turn 5 statements into questions: 'She lives in Salem' → 'Where does she live?'"],
+ quiz:[
+  {q:"Correct question?", o:["Where you live?","Where do you live?","Where you do live?"], a:1, e:"Wh + do + subject + verb."},
+  {q:"___ broke the glass?", o:["Who did","Who"], a:1, e:"'Who' is the subject – no 'did'."},
+  {q:"Do you know what time ___?", o:["is it","it is"], a:1, e:"Indirect question → normal order."}
+ ]},
+
+{part:4, t:"Negative Sentences", lvl:"Essential",
+ what:"To make a sentence negative, add <b>not</b> after the helper verb. If there's no helper, add <b>do/does/did + not</b>.",
+ why:"Tamil adds '-la/-ille' at the end (<i>Naan pogala</i>). English puts 'not' after the first helper verb.",
+ rules:[
+  "With be: <i>I am not / He isn't / They aren't / I wasn't</i>",
+  "With other helpers: <i>can't, won't (will not), haven't, shouldn't, couldn't</i>",
+  "No helper? Use do: <b>don't / doesn't / didn't + V1</b> → <i>I don't know. She doesn't eat. We didn't go.</i>",
+  "Only <b>one negative</b> per idea: ✗ <i>I don't know nothing</i> → ✓ <i>I don't know anything / I know nothing.</i>",
+  "Use <b>any</b> in negatives: <i>I don't have any money.</i>"
+ ],
+ ex:[
+  "[s:I] [h:am not] [v:feeling] [o:well] [k:today].",
+  "[s:He] [h:doesn't] [v:drink] [o:coffee].",
+  "[s:We] [h:didn't] [v:see] [o:anyone].",
+  "[s:You] [h:shouldn't] [v:worry] [o:so much]."
+ ],
+ tip:"Speak with contractions – <i>don't, isn't, can't, won't</i> – they make you sound fluent and relaxed.",
+ mist:[
+  ["I not know.","I don't know.","Add 'do'."],
+  ["He doesn't likes it.","He doesn't like it.","Base verb after doesn't."],
+  ["I didn't do nothing.","I didn't do anything.","No double negatives."]
+ ],
+ speak:["Say 5 things you don't like and 3 things you didn't do yesterday.","Correct a wrong statement: 'You live in Delhi?' – 'No, I don't live in Delhi. I live in…'"],
+ quiz:[
+  {q:"She ___ like onions.", o:["don't","doesn't","not"], a:1, e:"she → doesn't."},
+  {q:"Correct sentence?", o:["I don't have no time.","I don't have any time."], a:1, e:"One negative only; use 'any'."}
+ ]},
+
+{part:4, t:"Question Tags", lvl:"Useful",
+ what:"A short question at the end of a sentence to check something or invite agreement: <i>It's hot, <b>isn't it?</b></i>",
+ why:"Indian English often uses 'no?' or 'isn't it?' for everything. Correct tags sound much more natural.",
+ rules:[
+  "Positive sentence → <b>negative tag</b>: <i>You're coming, aren't you?</i>",
+  "Negative sentence → <b>positive tag</b>: <i>You aren't busy, are you?</i>",
+  "Use the <b>same helper</b> as the sentence: <i>She can drive, can't she?</i>",
+  "No helper → use do/does/did: <i>He works here, doesn't he? You went, didn't you?</i>",
+  "Use a <b>pronoun</b> in the tag: <i>Ravi is tall, isn't <b>he</b>?</i>",
+  "Special: <i>I am late, <b>aren't I</b>? · Let's go, <b>shall we</b>?</i>"
+ ],
+ ex:[
+  "[s:It]'[h:s] [o:a lovely day], [h:isn't] [s:it]?",
+  "[s:You] [v:know] [o:her], [h:don't] [s:you]?",
+  "[s:They] [h:haven't] [v:arrived], [h:have] [s:they]?",
+  "[s:She] [v:called] [o:you], [h:didn't] [s:she]?"
+ ],
+ tip:"Falling tone ↘ = you're sure, asking for agreement. Rising tone ↗ = you're really asking.",
+ mist:[
+  ["You are coming, isn't it?","You are coming, aren't you?","Match the helper and subject."],
+  ["He likes cricket, no?","He likes cricket, doesn't he?","Use a proper tag."]
+ ],
+ speak:["Make 5 sentences about the weather or food with tags.","Practise the falling and rising tone on 'You're from Chennai, aren't you?'"],
+ quiz:[
+  {q:"She can sing, ___?", o:["isn't it","can't she","doesn't she"], a:1, e:"Same helper 'can' → can't she."},
+  {q:"You didn't call, ___?", o:["did you","didn't you"], a:0, e:"Negative sentence → positive tag."}
+ ]},
+
+{part:4, t:"There is / There are / It", lvl:"Essential",
+ what:"<b>There is/are</b> says that something exists. <b>It</b> is used for weather, time, distance and to start sentences.",
+ why:"Tamil says 'Ange oru kadai irukku' with no subject. English needs 'There' or 'It' in front.",
+ rules:[
+  "<b>There is</b> + singular/uncountable: <i>There is a temple near my house. There is some milk.</i>",
+  "<b>There are</b> + plural: <i>There are many shops here.</i>",
+  "Past: there was / there were · Question: Is there…? Are there…?",
+  "<b>It</b> for weather/time/distance: <i>It's raining. It's 5 o'clock. It's 10 km from here.</i>",
+  "Don't say 'Have' for existence: ✗ <i>In my village have a school</i> → ✓ <i>There is a school in my village.</i>"
+ ],
+ ex:[
+  "[s:There] [v:is] [o:a bank] [k:on this road].",
+  "[s:There] [v:are] [o:30 students] [k:in my class].",
+  "[v:Is] [s:there] [o:an ATM] [k:nearby]?",
+  "[s:It] [v:takes] [o:two hours] [k:to reach Vellore]."
+ ],
+ tip:"Use 'there' to introduce, then 'it/they' to continue: <i>There's a new café. It's very good.</i>",
+ mist:[
+  ["Is very traffic today.","There is a lot of traffic today.","Add 'There'; 'traffic' needs 'a lot of'."],
+  ["In our office have 50 people.","There are 50 people in our office.","Existence → there are."]
+ ],
+ speak:["Describe your neighbourhood using there is/there are (6 sentences).","Say the time, weather and distance to your nearest bus stop using 'It…'"],
+ quiz:[
+  {q:"___ two banks on this street.", o:["There is","There are","It has"], a:1, e:"Plural → there are."},
+  {q:"___ raining since morning.", o:["It's been","There's been"], a:0, e:"Weather → it."}
+ ]},
+
+{part:4, t:"Conditionals (If sentences)", lvl:"Essential",
+ what:"Conditionals talk about <b>results of conditions</b>: real, possible, imaginary or past-regret.",
+ why:"You use 'if' sentences to plan, warn, imagine and regret – very common in real talk.",
+ rules:[
+  "<b>Zero</b> (facts): If + present, present → <i>If you heat ice, it melts.</i>",
+  "<b>First</b> (real future): If + present, <b>will</b> + V1 → <i>If it rains, I'll stay home.</i>",
+  "<b>Second</b> (imaginary now/future): If + past, <b>would</b> + V1 → <i>If I had a car, I would drive to work.</i>",
+  "<b>Third</b> (imaginary past / regret): If + had + V3, <b>would have</b> + V3 → <i>If I had studied, I would have passed.</i>",
+  "Second conditional with 'be': <i>If I <b>were</b> you, I would…</i> (advice)",
+  "Never put 'will' in the if-part: ✗ <i>If it will rain</i>"
+ ],
+ ex:[
+  "[k:If] [s:you] [v:press] [o:this button], [s:the machine] [v:stops].  (zero)",
+  "[k:If] [s:I] [v:get] [o:leave], [s:I]'[h:ll] [v:visit] [o:you].  (first)",
+  "[k:If] [s:I] [v:won] [o:the lottery], [s:I] [h:would] [v:buy] [o:a house].  (second)",
+  "[k:If] [s:I] [h:had] [v:left] [o:earlier], [s:I] [h:would have] [v:caught] [o:the train].  (third)"
+ ],
+ tip:"Comma rule: if the 'if' part comes first, use a comma. <i>If you call, I'll come.</i> / <i>I'll come if you call.</i>",
+ mist:[
+  ["If I will see him, I will tell him.","If I see him, I will tell him.","No 'will' after if."],
+  ["If I am you, I will go.","If I were you, I would go.","Advice → If I were you…"],
+  ["If I would have known, I would have come.","If I had known, I would have come.","If-part → had + V3."]
+ ],
+ speak:["Say 3 things you'll do if you get a holiday tomorrow.","What would you do if you were the Chief Minister for a day? Give 4 answers.","Say one regret: 'If I had…, I would have…'"],
+ quiz:[
+  {q:"If it ___ tomorrow, we'll cancel the trip.", o:["will rain","rains","rained"], a:1, e:"First conditional: if + present."},
+  {q:"If I ___ rich, I would travel the world.", o:["am","were","will be"], a:1, e:"Second conditional: if + past ('were')."},
+  {q:"If she had asked, I ___ her.", o:["would help","would have helped"], a:1, e:"Third conditional: would have + V3."}
+ ]},
+
+{part:4, t:"Passive Voice", lvl:"Useful",
+ what:"In the passive, the thing that <b>receives</b> the action becomes the subject. <i>Active: Someone stole my bike. Passive: My bike <b>was stolen</b>.</i>",
+ why:"Used when the doer is unknown, obvious or unimportant – common in news, notices, offices and formal speech.",
+ rules:[
+  "Form: <b>be + V3</b> (past participle). Change 'be' to show the tense.",
+  "Present: <i>English <b>is spoken</b> here.</i>",
+  "Past: <i>The road <b>was repaired</b> last week.</i>",
+  "Present perfect: <i>The parcel <b>has been delivered</b>.</i>",
+  "Future/modal: <i>It <b>will be done</b> tomorrow. It <b>must be signed</b>.</i>",
+  "Continuous: <i>The car <b>is being washed</b>.</i>",
+  "Add the doer with <b>by</b> only if it matters: <i>This song was sung by Ilaiyaraaja.</i>"
+ ],
+ ex:[
+  "[s:Rice] [h:is] [v:grown] [k:in the delta region].",
+  "[s:My phone] [h:was] [v:stolen] [k:yesterday].",
+  "[s:The results] [h:will be] [v:announced] [k:on Monday].",
+  "[s:The bridge] [h:is being] [v:built] [k:now]."
+ ],
+ tip:"Use the active voice in normal conversation – it is simpler and stronger. Use passive mostly for notices and when the doer is unknown.",
+ mist:[
+  ["I was born in 1995 year.","I was born in 1995.","Don't add 'year' after the number."],
+  ["The work is completed yesterday.","The work was completed yesterday.","Past time → was + V3."],
+  ["It was wrote by him.","It was written by him.","be + V3 (written)."]
+ ],
+ speak:["Say 3 things that are made / grown / spoken in Tamil Nadu.","Report 3 recent changes in your area: 'A new road has been built…'"],
+ quiz:[
+  {q:"The letters ___ every morning.", o:["deliver","are delivered","are deliver"], a:1, e:"Present passive: are + V3."},
+  {q:"My wallet ___ last night.", o:["was stolen","is stole","stolen"], a:0, e:"Past passive: was + V3."}
+ ]},
+
+{part:4, t:"Reported Speech", lvl:"Useful",
+ what:"Used to tell someone what another person said, without using their exact words.",
+ why:"You constantly pass on messages: <i>He said he would be late. She asked if you were free.</i>",
+ rules:[
+  "Use <b>said</b> (no person) or <b>told + person</b>: <i>He said that… / He told me that…</i>",
+  "Move the tense <b>one step back</b>: am/is → was · do → did · did → had done · will → would · can → could",
+  "Change pronouns and time words: today → that day · tomorrow → the next day · here → there",
+  "Questions become statements: <i>'Where do you live?' → She asked where I <b>lived</b>.</i>",
+  "Yes/No questions use <b>if/whether</b>: <i>He asked if I was ready.</i>",
+  "Commands use <b>to + V1</b>: <i>'Sit down.' → He told me to sit down.</i>",
+  "If the fact is still true, you can keep the tense: <i>He said he lives in Trichy.</i>"
+ ],
+ ex:[
+  "\"I am tired.\" → [s:She] [v:said] [k:that] [s:she] [v:was] [o:tired].",
+  "\"I will call you.\" → [s:He] [v:told] [o:me] [s:he] [h:would] [v:call] [o:me].",
+  "\"Are you free?\" → [s:She] [v:asked] [k:if] [s:I] [v:was] [o:free].",
+  "\"Don't be late.\" → [s:My boss] [v:told] [o:me] [k:not to] [v:be] [o:late]."
+ ],
+ tip:"<b>say</b> something · <b>tell</b> someone something. ✗ <i>He said me</i> → ✓ <i>He told me / He said to me.</i>",
+ mist:[
+  ["He said me to come.","He told me to come.","tell + person."],
+  ["She asked where do I live.","She asked where I lived.","Reported question → normal order, no 'do'."]
+ ],
+ speak:["Report 3 things a friend or family member said to you today.","Report 2 questions someone asked you this week."],
+ quiz:[
+  {q:"\"I can help.\" → She said she ___ help.", o:["can","could"], a:1, e:"can → could."},
+  {q:"Correct one?", o:["He said me the truth.","He told me the truth."], a:1, e:"tell + person."},
+  {q:"\"Are you hungry?\" → He asked ___ I was hungry.", o:["that","if"], a:1, e:"Yes/No question → if/whether."}
+ ]},
+
+{part:4, t:"Gerunds & Infinitives (-ing or to)", lvl:"Useful",
+ what:"After some verbs we use <b>V-ing</b> (gerund); after others we use <b>to + V1</b> (infinitive).",
+ why:"Mistakes like 'I enjoy to swim' or 'I want going' are very common. Learning the common verbs fixes most of them.",
+ rules:[
+  "<b>+ V-ing</b>: enjoy, finish, avoid, mind, suggest, keep, practise, stop, consider, miss, can't stand → <i>I enjoy cooking.</i>",
+  "<b>+ to V1</b>: want, need, decide, hope, plan, agree, promise, refuse, learn, forget, would like → <i>I want to learn.</i>",
+  "<b>Either</b> (same meaning): like, love, hate, start, begin, continue → <i>I like reading / to read.</i>",
+  "After a <b>preposition</b> always -ing: <i>interested <b>in</b> learning, good <b>at</b> singing, <b>before</b> leaving</i>",
+  "Changes meaning: <i>I stopped <b>smoking</b></i> (quit) vs <i>I stopped <b>to smoke</b></i> (stopped in order to smoke). <i>Remember <b>to lock</b> the door</i> (future) vs <i>I remember <b>locking</b> it</i> (past memory)."
+ ],
+ ex:[
+  "[s:She] [v:enjoys] [k:dancing].",
+  "[s:I] [v:decided] [k:to join] [o:a gym].",
+  "[s:He] [v:is good] [o:at] [k:fixing] [o:bikes].",
+  "[s:I]'[h:m] [v:looking forward] [o:to] [k:meeting] [o:you]."
+ ],
+ tip:"'Looking forward <b>to</b>' – here 'to' is a preposition, so: <i>looking forward to <b>seeing</b> you</i> (not 'to see').",
+ mist:[
+  ["I am interested to learn French.","I am interested in learning French.","After a preposition → -ing."],
+  ["I suggest to go by train.","I suggest going by train.","suggest + -ing."],
+  ["Looking forward to hear from you.","Looking forward to hearing from you.","to (preposition) + -ing."]
+ ],
+ speak:["Say 3 things you enjoy doing and 3 things you want to do this year.","Say what you are good at and interested in."],
+ quiz:[
+  {q:"I finished ___ the report.", o:["to write","writing"], a:1, e:"finish + -ing."},
+  {q:"She promised ___ me.", o:["helping","to help"], a:1, e:"promise + to V1."},
+  {q:"Thank you for ___ me.", o:["help","helping"], a:1, e:"After 'for' (preposition) → -ing."}
+ ]},
+
+{part:4, t:"Relative Clauses (who, which, that)", lvl:"Useful",
+ what:"Relative clauses join two sentences by adding information about a noun. <i>I have a friend. He lives in Dubai. → I have a friend <b>who</b> lives in Dubai.</i>",
+ why:"They help you speak in longer, smoother sentences instead of short broken ones.",
+ rules:[
+  "<b>who</b> – for people: <i>the man who called</i>",
+  "<b>which</b> – for things/animals: <i>the phone which I bought</i>",
+  "<b>that</b> – people or things (informal, very common): <i>the book that I read</i>",
+  "<b>where</b> – places: <i>the hotel where we stayed</i>",
+  "<b>whose</b> – possession: <i>the girl whose bag was lost</i>",
+  "<b>when</b> – time: <i>the day when we met</i>",
+  "You can drop who/which/that when it is the object: <i>the film (that) I watched</i>"
+ ],
+ ex:[
+  "[s:The woman] [k:who] [v:lives] [o:next door] [v:is] [o:a doctor].",
+  "[s:This] [v:is] [o:the restaurant] [k:where] [s:we] [v:had] [o:dinner].",
+  "[s:I] [v:lost] [o:the pen] [k:that] [s:you] [v:gave] [o:me].",
+  "[s:He]'[v:s] [o:the boy] [k:whose] [o:father] [v:is] [o:a pilot]."
+ ],
+ tip:"Don't repeat the pronoun: ✗ <i>the man who <b>he</b> called me</i> → ✓ <i>the man who called me.</i>",
+ mist:[
+  ["The man which came here…","The man who came here…","People → who."],
+  ["The book that I bought it is good.","The book that I bought is good.","Don't repeat 'it'."]
+ ],
+ speak:["Describe 3 people in your life using 'who'.","Describe your favourite place using 'where'."],
+ quiz:[
+  {q:"That's the teacher ___ helped me.", o:["which","who"], a:1, e:"People → who."},
+  {q:"This is the town ___ I was born.", o:["which","where"], a:1, e:"Place → where."}
+ ]},
+
+/* ================= PART 5: SMALL WORDS ================= */
+{part:5, t:"Prepositions of Time: in, on, at", lvl:"Essential",
+ what:"<b>at, on, in</b> show time. They move from small/exact (<b>at</b>) to big (<b>in</b>).",
+ why:"Tamil uses one ending '-la/-il' for all of them, so English prepositions feel random. A simple pyramid makes them easy.",
+ rules:[
+  "<b>at</b> – exact time & short points: at 6 o'clock, at noon, at night, at the weekend (UK), at the moment",
+  "<b>on</b> – days & dates: on Monday, on 15th August, on my birthday, on Diwali day",
+  "<b>in</b> – longer periods: in the morning/evening, in July, in 2025, in summer, in two days (= after two days)",
+  "No preposition with: today, tomorrow, yesterday, this/next/last + time → <i>I'll go next week.</i>",
+  "<b>for</b> + duration (for 3 hours) · <b>since</b> + start point (since 2010) · <b>during</b> + event (during the meeting)",
+  "<b>by</b> = not later than (by 5 p.m.) · <b>until/till</b> = up to that time (wait until 5)"
+ ],
+ ex:[
+  "[s:The class] [v:starts] [k:at] [o:9 a.m.]",
+  "[s:I] [v:was born] [k:on] [o:12th March] [k:in] [o:1996].",
+  "[s:We] [v:go] [o:for a walk] [k:in] [o:the evening].",
+  "[s:Submit] [o:it] [k:by] [o:Friday]."
+ ],
+ tip:"Pyramid: <b>IN</b> (big: months, years) ▸ <b>ON</b> (days, dates) ▸ <b>AT</b> (exact clock time).",
+ mist:[
+  ["I will come on next Monday.","I will come next Monday.","No preposition before next/last/this."],
+  ["See you in the night.","See you at night.","'at night' is fixed."],
+  ["I am waiting from morning.","I have been waiting since morning.","Start point → since."]
+ ],
+ speak:["Say your birthday, the year you finished school, and the time you wake up.","Talk about your plans using today, on Saturday, in December."],
+ quiz:[
+  {q:"The meeting is ___ Tuesday.", o:["in","on","at"], a:1, e:"Days → on."},
+  {q:"I usually sleep ___ 11 p.m.", o:["at","in"], a:0, e:"Exact time → at."},
+  {q:"See you ___ next week.", o:["on","(nothing)"], a:1, e:"No preposition before 'next'."}
+ ]},
+
+{part:5, t:"Prepositions of Place & Movement", lvl:"Essential",
+ what:"These show <b>where</b> something is or <b>where it moves</b>.",
+ why:"Giving directions, describing your home and talking about travel all need these.",
+ rules:[
+  "<b>at</b> – a point: at the bus stop, at home, at work, at the door",
+  "<b>in</b> – inside an area/space: in the room, in Chennai, in a car, in the photo",
+  "<b>on</b> – on a surface/line: on the table, on the wall, on the bus/train, on the road, on the 2nd floor",
+  "Others: under, above, below, next to, beside, between, behind, in front of, opposite, near",
+  "Movement: <b>to</b> (direction) go to school · <b>into</b> (enter) · <b>out of</b> · <b>across</b> · <b>through</b> · <b>along</b> · <b>towards</b>",
+  "No 'to' with <b>home</b>: <i>go home</i> (not 'go to home')"
+ ],
+ ex:[
+  "[s:The keys] [v:are] [k:on] [o:the table].",
+  "[s:My house] [v:is] [k:opposite] [o:the temple].",
+  "[s:She] [v:walked] [k:into] [o:the room].",
+  "[s:I]'[h:m] [k:on] [o:the bus] [o:now]; [s:I]'[h:ll] [v:reach] [o:home] [k:in] [o:10 minutes]."
+ ],
+ tip:"<b>in</b> a car / taxi / auto (small, you sit inside) · <b>on</b> a bus / train / plane / bike (big or you sit on top).",
+ mist:[
+  ["I am going to home.","I am going home.","No 'to' before home."],
+  ["He is in the bus.","He is on the bus.","Public transport → on."],
+  ["Reach to the station.","Reach the station.","'reach' takes no preposition."]
+ ],
+ speak:["Give directions from your house to the nearest shop.","Describe where 6 things are in your room."],
+ quiz:[
+  {q:"The picture is ___ the wall.", o:["in","on","at"], a:1, e:"Surface → on."},
+  {q:"I'll wait for you ___ the gate.", o:["at","in"], a:0, e:"A point → at."},
+  {q:"What time do you reach ___ office?", o:["to","(nothing) – 'reach office'","at"], a:1, e:"'reach' needs no preposition: reach the office."}
+ ]},
+
+{part:5, t:"Connectors & Conjunctions", lvl:"Essential",
+ what:"Connectors join ideas so your speech flows: <b>and, but, so, because, although</b>…",
+ why:"Fluent speakers link ideas. Without connectors, speech sounds like a list of short sentences.",
+ rules:[
+  "Add: <b>and, also, as well as, besides, moreover</b> (formal)",
+  "Contrast: <b>but, although, even though, however, whereas</b>",
+  "Reason: <b>because, since, as, because of + noun</b>",
+  "Result: <b>so, therefore, that's why</b>",
+  "Time/order: <b>first, then, after that, finally, before, after, when, while, as soon as</b>",
+  "Condition: <b>if, unless (= if not), in case</b>",
+  "Don't double up: ✗ <i>Although it rained, <b>but</b> we went</i> → use one only."
+ ],
+ ex:[
+  "[s:I] [v:was] [o:tired], [k:but] [s:I] [v:finished] [o:the work].",
+  "[k:Although] [s:it] [v:was raining], [s:we] [v:played].",
+  "[s:She] [v:stayed] [o:home] [k:because of] [o:the fever].",
+  "[s:You] [h:won't] [v:pass] [k:unless] [s:you] [v:practise]."
+ ],
+ tip:"<b>because</b> + sentence (because it rained) · <b>because of</b> + noun (because of the rain).",
+ mist:[
+  ["Although he is rich, but he is simple.","Although he is rich, he is simple.","Use although OR but."],
+  ["Because of it was late, I left.","Because it was late, I left.","Sentence → because."]
+ ],
+ speak:["Tell a short story about your weekend using first, then, after that, finally.","Give 3 opinions with a reason: 'I like … because …'"],
+ quiz:[
+  {q:"I stayed home ___ the rain.", o:["because","because of"], a:1, e:"Noun → because of."},
+  {q:"___ he was tired, he kept working.", o:["Although","Because"], a:0, e:"Contrast → although."}
+ ]},
+
+{part:5, t:"Common Phrasal Verbs", lvl:"Useful",
+ what:"A phrasal verb = verb + small word (up, out, on, off…). Together they have a new meaning: <i>give up</i> = stop trying.",
+ why:"Native speakers use phrasal verbs all the time in casual speech. Knowing the top 30 makes you understand and sound natural.",
+ rules:[
+  "<b>wake up</b> – stop sleeping · <b>get up</b> – leave the bed",
+  "<b>turn on / turn off</b> – start/stop a machine or light",
+  "<b>put on / take off</b> – wear / remove clothes",
+  "<b>pick up</b> – lift, or collect someone · <b>drop off</b> – leave someone somewhere",
+  "<b>look for</b> – search · <b>find out</b> – discover information",
+  "<b>look after</b> – take care of · <b>get along (with)</b> – have a good relationship",
+  "<b>give up</b> – stop trying/quit · <b>carry on / go on</b> – continue",
+  "<b>call back</b> – return a call · <b>hang up</b> – end a call",
+  "<b>run out of</b> – have none left · <b>come across</b> – find by chance",
+  "<b>set up</b> – arrange/start · <b>sort out</b> – solve · <b>fill in</b> – complete a form",
+  "<b>put off</b> – postpone · <b>call off</b> – cancel · <b>show up / turn up</b> – arrive",
+  "<b>check in / check out</b> – hotel/airport · <b>get on / get off</b> – bus, train"
+ ],
+ ex:[
+  "[s:Please] [v:turn off] [o:the fan].",
+  "[s:I]'[h:ll] [v:pick] [o:you] [v:up] [k:at 7].",
+  "[s:We]'[h:ve] [v:run out of] [o:sugar].",
+  "[s:They] [v:called off] [o:the match] [k:because of the rain]."
+ ],
+ tip:"With a pronoun, put it in the middle: <i>turn <b>it</b> off</i>, <i>pick <b>her</b> up</i> (not 'turn off it').",
+ mist:[
+  ["Please on the light.","Please turn on the light.","'on' alone is not a verb in English."],
+  ["Prepone the meeting.","Bring the meeting forward.","'Prepone' is understood only in India."],
+  ["I'll pick up you.","I'll pick you up.","Pronoun goes in the middle."]
+ ],
+ speak:["Describe your morning using 6 phrasal verbs (wake up, get up, put on…).","Use run out of, give up and find out in your own sentences."],
+ quiz:[
+  {q:"Can you ___ the TV? It's too loud.", o:["turn down","turn up"], a:0, e:"turn down = lower the volume."},
+  {q:"The match was ___ due to rain.", o:["called off","called up"], a:0, e:"call off = cancel."},
+  {q:"Correct one?", o:["Switch off it.","Switch it off."], a:1, e:"Pronoun in the middle."}
+ ]},
+
+{part:5, t:"Quantity: some, any, much, many, few, little", lvl:"Essential",
+ what:"These words say <b>how much or how many</b>. The choice depends on countable vs uncountable (Chapter 3).",
+ why:"'How much people?' or 'many money' are very common errors.",
+ rules:[
+  "<b>some</b> – positive sentences and offers: <i>I have some friends. Would you like some tea?</i>",
+  "<b>any</b> – negatives and questions: <i>I don't have any money. Do you have any questions?</i>",
+  "<b>many</b> + countable: <i>many books, How many?</i>",
+  "<b>much</b> + uncountable: <i>much time, How much?</i> (mostly in questions/negatives)",
+  "<b>a lot of / lots of</b> – both types, positive sentences: <i>a lot of people, a lot of water</i>",
+  "<b>a few</b> (countable) / <b>a little</b> (uncountable) = some, enough · <b>few / little</b> (no 'a') = almost none"
+ ],
+ ex:[
+  "[k:How many] [o:brothers] [h:do] [s:you] [v:have]?",
+  "[k:How much] [h:does] [s:this] [v:cost]?",
+  "[s:I] [v:have] [k:a few] [o:close friends].",
+  "[s:There] [v:is] [k:a little] [o:milk] [k:left]."
+ ],
+ tip:"Price question: always <b>How much…?</b> (money is uncountable) → <i>How much is this?</i>",
+ mist:[
+  ["How much people came?","How many people came?","people = countable."],
+  ["I have many works.","I have a lot of work.","'work' (job tasks) is uncountable."],
+  ["I don't have some money.","I don't have any money.","Negative → any."]
+ ],
+ speak:["Ask a shopkeeper 3 'How much' questions.","Describe your fridge using some, a lot of, a little, no."],
+ quiz:[
+  {q:"How ___ sugar do you take?", o:["many","much"], a:1, e:"sugar is uncountable."},
+  {q:"Do you have ___ brothers?", o:["some","any"], a:1, e:"Question → any."},
+  {q:"I have ___ money – enough for a coffee.", o:["little","a little"], a:1, e:"'a little' = some/enough."}
+ ]},
+
+/* ================= PART 6: FLUENCY ================= */
+{part:6, t:"Tamil-Speaker Mistakes to Fix", lvl:"Essential",
+ what:"These mistakes come straight from Tamil grammar or Indian English habits. Fixing them gives the <b>biggest jump</b> in how fluent you sound.",
+ why:"You think in Tamil and translate. These are the exact places where direct translation breaks.",
+ rules:[
+  "<b>Don't drop helpers</b>: 'He coming' → <i>He <b>is</b> coming</i>",
+  "<b>Don't use -ing for states</b>: 'I am having a doubt' → <i>I <b>have</b> a question</i>",
+  "<b>Doubt ≠ question</b>: 'I have a doubt' (Indian) → <i>I have a question</i> (doubt = feeling unsure)",
+  "<b>'Only' / 'itself' as emphasis</b>: 'I'm here only' → <i>I'm right here</i>; 'Today itself' → <i>today</i> / <i>this very day</i>",
+  "<b>Redundant words</b>: return back → return · revert back → reply · discuss about → discuss · repeat again → repeat · cousin brother → cousin",
+  "<b>Pass out</b> means 'faint' outside India → say <i>I graduated in 2018</i>",
+  "<b>'Tell me'</b> on the phone sounds rude → <i>Hello, how can I help?</i>",
+  "<b>'What is your good name?'</b> → <i>May I know your name? / What's your name?</i>",
+  "<b>'Do one thing…'</b> → <i>Here's what you can do… / Why don't you…</i>",
+  "<b>'Kindly do the needful'</b> → say exactly what you need: <i>Could you please send the form?</i>",
+  "<b>'Since 2 years'</b> → <i>for 2 years</i>"
+ ],
+ ex:[
+  "✗ I am having fever. → ✓ [s:I] [v:have] [o:a fever].",
+  "✗ He is my cousin brother. → ✓ [s:He] [v:is] [o:my cousin].",
+  "✗ Let us discuss about it. → ✓ [s:Let's] [v:discuss] [o:it].",
+  "✗ I am coming from 2 hours. → ✓ [s:I]'[h:ve been] [v:travelling] [k:for two hours]."
+ ],
+ tip:"When you feel the Tamil sentence in your head, check 3 things: <b>subject? helper verb? a/the?</b> These fix 70% of errors.",
+ mist:[
+  ["Myself Ravi from Chennai.","I'm Ravi, from Chennai.","Never start with 'Myself'."],
+  ["I will revert back.","I'll get back to you. / I'll reply.","'revert' already means 'go back'."],
+  ["He passed out from IIT in 2015.","He graduated from IIT in 2015.","pass out = faint."],
+  ["Please on the AC.","Please turn on the AC.","Use 'turn on / switch on'."]
+ ],
+ speak:["Read every ✗ sentence above, then say the ✓ version aloud 3 times.","Introduce yourself in 30 seconds avoiding all the Indian-English habits."],
+ quiz:[
+  {q:"Best introduction?", o:["Myself Priya.","I'm Priya."], a:1, e:"'Myself' is not used to introduce."},
+  {q:"Which is natural?", o:["I have a doubt in this sum.","I have a question about this sum."], a:1, e:"Doubt = uncertainty; for asking, say question."},
+  {q:"Correct one?", o:["Let's discuss about the plan.","Let's discuss the plan."], a:1, e:"'discuss' takes no 'about'."}
+ ]},
+
+{part:6, t:"Everyday Phrases for Fluent Talk", lvl:"Essential",
+ what:"Ready-made phrases native speakers use to <b>start, continue and end</b> conversations, and to buy time while thinking.",
+ why:"Fluency is not knowing every rule – it is speaking without long pauses. These phrases give you time to think and sound natural.",
+ rules:[
+  "<b>Thinking time</b>: Well… · Let me think… · That's a good question. · How can I put it…",
+  "<b>Didn't understand</b>: Sorry, could you say that again? · What do you mean by…? · Could you speak a bit slower?",
+  "<b>Agree</b>: Exactly. · I think so too. · That's true. · Absolutely.",
+  "<b>Disagree politely</b>: I see your point, but… · I'm not sure about that. · I see it a bit differently.",
+  "<b>Opinion</b>: In my opinion… · I think… · I feel that… · As far as I know…",
+  "<b>Asking politely</b>: Could you…? · Would you mind…? · Is it OK if I…?",
+  "<b>Thanking & responding</b>: Thanks a lot. → You're welcome / No problem / My pleasure.",
+  "<b>Apologising</b>: Sorry, my mistake. · I apologise for the delay. → No worries / That's OK.",
+  "<b>Ending</b>: It was nice talking to you. · Let's catch up soon. · Take care."
+ ],
+ ex:[
+  "[k:Well], [s:I] [v:think] [o:the first option is better].",
+  "[k:Sorry], [h:could] [s:you] [v:repeat] [o:that]?",
+  "[k:I see your point, but] [s:I] [v:feel] [o:it's too expensive].",
+  "[k:It was nice talking to you.] [v:Take] [o:care]!"
+ ],
+ tip:"<b>5 daily habits</b>: (1) talk to yourself in English for 10 minutes, (2) shadow – repeat a short English video line by line, (3) think in English when shopping/travelling, (4) record yourself once a week, (5) don't stop for mistakes – keep talking.",
+ mist:[
+  ["Repeat again please.","Could you repeat that, please?","'repeat' already means 'again'."],
+  ["Same to you. (reply to 'Thank you')","You're welcome.","'Same to you' replies to wishes, not thanks."],
+  ["Ok, bye, tata.","OK, bye! Take care.","'tata' is informal Indian English."]
+ ],
+ speak:["Have a 2-minute imaginary chat with a new neighbour: greet, ask questions, agree, end politely.","Give your opinion on 'Is online shopping better than going to shops?' using 4 phrases."],
+ quiz:[
+  {q:"Someone says 'Thank you'. You reply…", o:["Same to you.","You're welcome."], a:1, e:"'Same to you' is for wishes like 'Happy Diwali'."},
+  {q:"Polite way to disagree?", o:["You are wrong.","I see your point, but I think…"], a:1, e:"Acknowledge first, then give your view."}
+ ]}
+];
+/* Tamil support: [explanation in Tamil, Tamil sentence, English version] — same order as CH */
+const TA = [
+["ஆங்கிலத்தில் ஒவ்வொரு சொல்லுக்கும் ஒரு வேலை உண்டு — பெயர்ச்சொல் (Noun), வினைச்சொல் (Verb), பெயரடை (Adjective), வினையடை (Adverb) போன்றவை. தமிழிலும் இதே பிரிவுகள் உள்ளன.","அவள் மெதுவாகப் பேசுகிறாள்.","She speaks slowly. (மெதுவாக = slowly → adverb)"],
+["தமிழில் வினைச்சொல் கடைசியில் வரும் (எழுவாய் + செயப்படுபொருள் + வினை). ஆங்கிலத்தில் வினைச்சொல் நடுவில் வரும்: எழுவாய் + வினை + செயப்படுபொருள்.","நான் சோறு சாப்பிட்டேன்.","I ate rice. (நான் = I · சாப்பிட்டேன் = ate · சோறு = rice)"],
+["சில பொருட்களை எண்ணலாம் (ஆப்பிள்கள்), சிலவற்றை எண்ண முடியாது (தண்ணீர், அறிவுரை). தமிழில் 'அறிவுரைகள்' என்று சொல்லலாம், ஆனால் ஆங்கிலத்தில் advice-க்கு -s கிடையாது.","அவர் எனக்கு நிறைய அறிவுரைகள் கொடுத்தார்.","He gave me a lot of advice. (advices ✗)"],
+["தமிழில் a, an, the போன்ற சொற்கள் இல்லை. அதனால் நாம் அவற்றை விட்டுவிடுகிறோம். 'ஒரு' = a/an; 'அந்த' (இருவருக்கும் தெரிந்தது) = the.","நான் ஒரு பொறியாளர்.","I am an engineer. (an-ஐ விடக்கூடாது)"],
+["நான் = I (எழுவாய்), என்னை/எனக்கு = me, என் = my, என்னுடையது = mine. 'Myself' என்பது 'நானே' — அறிமுகத்திற்குப் பயன்படுத்தக் கூடாது.","என் பெயர் அருண்.","My name is Arun. / I'm Arun. (Myself Arun ✗)"],
+["தமிழில் வினை எழுவாய்க்கு ஏற்ப மாறும் (அவன் போகிறான், அவர்கள் போகிறார்கள்). ஆங்கிலத்திலும் அப்படித்தான் — he/she/it என்றால் வினையுடன் -s சேர்க்க வேண்டும்.","அவள் பள்ளிக்குப் போகிறாள்.","She goes to school. (go → goes)"],
+["ஒப்பிடும்போது: big → bigger (விடப் பெரிய) → the biggest (எல்லாவற்றையும் விடப் பெரிய). தமிழின் 'விட' = than.","சென்னை ஊட்டியை விட வெப்பமானது.","Chennai is hotter than Ooty. (விட = than)"],
+["'எப்போதும்', 'ஒருபோதும்' போன்ற சொற்கள் ஆங்கிலத்தில் வினைச்சொல்லுக்கு முன் வரும்; ஆனால் is/am/are-க்குப் பின் வரும்.","நான் எப்போதும் நடந்தே வேலைக்குப் போவேன்.","I always walk to work."],
+["தினமும் செய்யும் பழக்கங்கள், உண்மைகள் — 'நான் தினமும் வேலைக்குப் போகிறேன்' என்பது 'I go', 'I am going' அல்ல.","அவர் தினமும் காலையில் காபி குடிப்பார்.","He drinks coffee every morning."],
+["இப்போது நடந்துகொண்டிருப்பது — 'சாப்பிட்டுக்கொண்டிருக்கிறேன்' = I am eating. ஆனால் 'தெரியும்', 'பிடிக்கும்', 'வேண்டும்' போன்றவற்றுக்கு -ing கிடையாது.","எனக்கு அவரைத் தெரியும்.","I know him. (I am knowing ✗)"],
+["இறந்த காலத்தில் நடந்து, அதன் விளைவு இப்போதும் இருப்பது. 'சாப்பிட்டாச்சா?' = Have you eaten? 'நேற்று' போன்ற குறிப்பிட்ட நேரம் சொன்னால் இதைப் பயன்படுத்தக் கூடாது.","நான் டெல்லிக்கு இரண்டு முறை போயிருக்கிறேன்.","I have been to Delhi twice."],
+["இப்போதும் தொடர்ந்து நடப்பது, எவ்வளவு நேரமாக என்பதைச் சொல்வது. தமிழின் '-ஆக' (ஒரு மணி நேரமாக) = for.","நான் ஒரு மணி நேரமாகக் காத்திருக்கிறேன்.","I have been waiting for an hour. (I am waiting from one hour ✗)"],
+["முடிந்துபோன செயல் — 'போனேன்' = went. did / didn't வந்தால் வினை அடிப்படை வடிவத்திற்குத் திரும்பும்.","நான் நேற்று போகவில்லை.","I didn't go yesterday. (didn't went ✗)"],
+["நீண்ட நேரம் நடந்துகொண்டிருந்த செயல் = was/were + -ing; இடையில் வந்த சிறு செயல் = simple past.","நான் சமைத்துக்கொண்டிருந்தபோது போன் அடித்தது.","I was cooking when the phone rang."],
+["இரண்டு இறந்தகாலச் செயல்களில் முதலில் நடந்ததற்கு had + V3.","நான் ஸ்டேஷனுக்குப் போவதற்குள் ரயில் புறப்பட்டுவிட்டது.","By the time I reached the station, the train had left."],
+["எதிர்காலத்திற்கு எப்போதும் will அல்ல. இப்போதுதான் முடிவெடுத்தால் will; முன்பே திட்டமிட்டிருந்தால் going to.","நான் அடுத்த மாதம் கார் வாங்கப் போகிறேன்.","I'm going to buy a car next month. (திட்டம் → going to)"],
+["'நாளை இந்நேரம் பயணம் செய்துகொண்டிருப்பேன்' = will be travelling. '-க்குள் முடித்திருப்பேன்' = will have finished by.","வெள்ளிக்கிழமைக்குள் நான் இதை முடித்திருப்பேன்.","I will have finished this by Friday."],
+["இப்போது செய்யாத பழைய பழக்கம் — 'சின்ன வயசுல … செய்வேன்' = used to.","சிறு வயதில் நான் மரம் ஏறுவேன்.","I used to climb trees when I was a child."],
+["முடியும் = can, முடிந்தது (கடந்த காலம்) = could. can-க்குப் பின் 'to' வராது, -s வராது.","என்னால் மூன்று மொழிகள் பேச முடியும்.","I can speak three languages. (என்னால்… முடியும் = I can)"],
+["கண்டிப்பாகச் செய்ய வேண்டும் = must / have to · செய்ய வேண்டியதில்லை = don't have to · செய்யக் கூடாது = mustn't · செய்வது நல்லது = should.","நீங்கள் டாக்டரைப் பார்ப்பது நல்லது.","You should see a doctor."],
+["'ஒருவேளை … லாம்' = may / might. மரியாதையாகக் கேட்க 'I want' பதிலாக 'I'd like' சொல்லுங்கள்.","இன்று மழை பெய்யலாம்.","It might rain today."],
+["தமிழில் இறுதியில் '-ஆ' சேர்த்தால் கேள்வி. ஆங்கிலத்தில் உதவி வினையை (do / are / can) எழுவாய்க்கு முன் கொண்டுவர வேண்டும்.","நீ எங்கே வேலை செய்கிறாய்?","Where do you work? (Where you work? ✗)"],
+["தமிழில் '-இல்லை' கடைசியில் வரும். ஆங்கிலத்தில் 'not' உதவி வினைக்குப் பின் வரும்: don't / isn't / can't.","எனக்குத் தெரியாது.","I don't know. (I not know ✗)"],
+["தமிழின் 'இல்லையா?' போல. ஆனால் எல்லாவற்றுக்கும் 'isn't it' அல்ல — உதவி வினையும் எழுவாயும் பொருந்த வேண்டும்.","நீ வருகிறாய், இல்லையா?","You're coming, aren't you? (isn't it ✗)"],
+["'அங்கே ஒரு கடை இருக்கிறது' — தமிழில் எழுவாய் இல்லை. ஆங்கிலத்தில் 'There is' அல்லது 'It' சேர்க்க வேண்டும்.","என் ஊரில் ஒரு பள்ளி இருக்கிறது.","There is a school in my village. (In my village have a school ✗)"],
+["'-ஆல்' (வந்தால், இருந்தால்) = if. if வரும் பகுதியில் will வராது.","மழை பெய்தால், நான் வீட்டிலேயே இருப்பேன்.","If it rains, I'll stay at home. (If it will rain ✗)"],
+["'திருடப்பட்டது', 'கட்டப்படுகிறது' — '-படு' வடிவம் = be + V3.","என் போன் நேற்று திருடப்பட்டது.","My phone was stolen yesterday."],
+["பிறர் சொன்னதைச் சொல்லும்போது காலம் ஒரு படி பின்னோக்கிச் செல்லும்: is → was, will → would.","தான் களைப்பாக இருப்பதாக அவள் சொன்னாள்.","She said she was tired."],
+["சில வினைகளுக்குப் பின் -ing (enjoy cooking), சிலவற்றுக்குப் பின் to (want to learn). சொற்களாக மனப்பாடம் செய்வதே எளிய வழி.","எனக்கு சமைப்பது பிடிக்கும்.","I enjoy cooking. / I like cooking."],
+["தமிழில் விவரம் முன்னால் வரும் ('பக்கத்து வீட்டில் வசிக்கும் பெண்'). ஆங்கிலத்தில் பின்னால் வரும்: the woman who lives next door.","பக்கத்து வீட்டில் வசிக்கும் பெண் ஒரு மருத்துவர்.","The woman who lives next door is a doctor."],
+["தமிழில் '-இல்' ஒன்றே. ஆங்கிலத்தில்: கடிகார நேரம் = at · நாள் / தேதி = on · மாதம் / ஆண்டு = in.","நான் 1996-இல் பிறந்தேன்.","I was born in 1996. / I was born on 12th March."],
+["'-இல்' = in / on / at — இடத்தைப் பொறுத்தது. 'வீட்டுக்குப் போகிறேன்' = I'm going home ('to' வராது).","நான் பஸ்ஸில் இருக்கிறேன்.","I'm on the bus. (in the bus ✗)"],
+["ஆனாலும் = but / although · ஏனென்றால் = because · அதனால் = so. although, but இரண்டையும் ஒரே வாக்கியத்தில் பயன்படுத்தக் கூடாது.","மழை பெய்ததால் நான் வீட்டில் இருந்தேன்.","I stayed home because it rained. / because of the rain."],
+["வினை + சிறிய சொல் சேர்ந்தால் புதிய பொருள். 'லைட்டை ஆன் பண்ணு' = Turn on the light (on the light ✗).","ஃபேனை அணைத்துவிடு.","Turn off the fan. / Switch off the fan."],
+["எத்தனை (எண்ணக்கூடியவை) = how many · எவ்வளவு (எண்ண முடியாதவை, விலை) = how much.","எத்தனை பேர் வந்தார்கள்?","How many people came? (How much people ✗)"],
+["தமிழில் யோசித்து மொழிபெயர்க்கும் இடங்களில்தான் தவறு வருகிறது. மூன்றைச் சரிபாருங்கள்: எழுவாய் உண்டா? உதவி வினை உண்டா? a / the உண்டா?","எனக்குக் காய்ச்சல் இருக்கிறது.","I have a fever. (I am having fever ✗)"],
+["சரளமாகப் பேசுவது என்றால் எல்லா விதிகளும் தெரிவது அல்ல — நிறுத்தாமல் பேசுவது. 'Well…', 'Let me think…' போன்றவை யோசிக்க நேரம் தரும்.","மன்னிக்கவும், மீண்டும் சொல்ல முடியுமா?","Sorry, could you say that again?"]
+];
+</script>
+
+<div class="wrap">
+  <section id="home" class="wrap" style="gap:26px">
+    <header class="cover">
+      <span class="eyebrow">English grammar for speaking · தமிழ் வழிக் கல்வி பயின்றவர்களுக்காக</span>
+      <h1>Speak <span class="stripe">Right</span></h1>
+      <p>37 short chapters in 6 parts. Every chapter has simple rules, colour-coded examples, a Tamil explanation, the mistakes Tamil speakers make, speaking practice and a quick quiz.</p>
+    </header>
+
+    <div class="legend" aria-label="Colour key">
+      <b>Colour key used in every example</b>
+      <span class="w w-s">Subject</span>
+      <span class="w w-v">Main verb</span>
+      <span class="w w-h">Helper verb</span>
+      <span class="w w-o">Object / rest</span>
+      <span class="w w-k">Key word / time</span>
+    </div>
+
+    <div class="howto">
+      <h3>How to use this book</h3>
+      <ol>
+        <li>Do <b>one chapter a day</b> (15–20 minutes). Start with the <b>Essential</b> ones.</li>
+        <li>Read the rule, then read the Tamil box to connect it with what you know.</li>
+        <li><b>Say every example aloud</b> – speaking is a muscle, reading alone won't build it.</li>
+        <li>Do the “Speak it” tasks out loud, then take the quiz. Wrong? Read why and try again.</li>
+        <li>Tap “Mark chapter done” and come back tomorrow.</li>
+      </ol>
+    </div>
+
+    <div class="prog">
+      <div class="bar"><i id="progbar"></i></div>
+      <small id="progtxt">0 of 37 chapters done</small>
+    </div>
+
+    <div id="parts" class="wrap" style="gap:28px"></div>
+  </section>
+
+  <section id="chapter" class="wrap" hidden></section>
+</div>
+
+<script>
+const PC = n => `var(--p${n})`;
+const hl = s => s.replace(/\[(s|v|h|o|k):([^\]]+)\]/g,(m,c,t)=>`<span class="w w-${c}">${t}</span>`);
+const store = {
+  get(){ try{ return JSON.parse(localStorage.getItem("srg-done")||"[]") }catch(e){ return [] } },
+  set(a){ try{ localStorage.setItem("srg-done",JSON.stringify(a)) }catch(e){} }
+};
+let done = store.get();
+
+function renderHome(){
+  const box = document.getElementById("parts");
+  box.innerHTML = "";
+  PARTS.forEach(p=>{
+    const sec = document.createElement("div");
+    sec.className="part"; sec.style.setProperty("--pc",PC(p.n));
+    sec.innerHTML = `<div class="part-head"><span class="num">Part ${p.n}</span><div><h2>${p.name}</h2><span class="sub">${p.sub}</span></div></div><div class="chlist"></div>`;
+    const list = sec.querySelector(".chlist");
+    CH.forEach((c,i)=>{ if(c.part!==p.n) return;
+      const b=document.createElement("button"); b.className="chbtn";
+      b.innerHTML=`<span class="n">${i+1}</span><span class="tt">${c.t}</span>${done.includes(i)?'<span class="done">✓ done</span>':''}<span class="lvl ${c.lvl}">${c.lvl}</span>`;
+      b.onclick=()=>openCh(i); list.appendChild(b);
+    });
+    box.appendChild(sec);
+  });
+  document.getElementById("progbar").style.width = (done.length/CH.length*100)+"%";
+  document.getElementById("progtxt").textContent = `${done.length} of ${CH.length} chapters done`;
+}
+
+function openCh(i){
+  const c = CH[i], ta = TA[i] || null;
+  const el = document.getElementById("chapter");
+  el.style.setProperty("--pc",PC(c.part));
+  const part = PARTS[c.part-1];
+  el.innerHTML = `
+  <div class="topbar"><button class="ghost" id="back">← All chapters</button><span style="color:var(--muted);font-size:14px">Chapter ${i+1} / ${CH.length}</span></div>
+  <div class="ch-head"><div class="meta"><span>Part ${part.n} · ${part.name}</span><span class="lvl ${c.lvl}">${c.lvl}</span></div><h1>${i+1}. ${c.t}</h1></div>
+  <div class="block"><h3>What is it?</h3><p>${c.what}</p></div>
+  <div class="block"><h3>Why it matters</h3><p>${c.why}</p></div>
+  ${ta?`<div class="tamil"><span class="lab">தமிழில் புரிந்துகொள்ளுங்கள் · In Tamil</span><p>${ta[0]}</p><div class="pair"><span class="t">${ta[1]}</span><span class="e">${ta[2]}</span></div></div>`:""}
+  <div class="block"><h3>The rules</h3><ul class="rules">${c.rules.map(r=>`<li>${r}</li>`).join("")}</ul></div>
+  <div class="block"><h3>Examples – say them aloud</h3><div class="exs">${c.ex.map(e=>`<div class="ex">${hl(e)}</div>`).join("")}</div></div>
+  ${c.tip?`<div class="tip"><b>Remember:</b> ${c.tip}</div>`:""}
+  <div class="block"><h3>Common mistakes</h3><div class="mist">${c.mist.map(m=>`<div class="mi"><span class="x">${m[0]}</span><span class="r">${m[1]}</span><small>${m[2]}</small></div>`).join("")}</div></div>
+  <div class="block"><h3>Speak it (out loud!)</h3><ol class="speak">${c.speak.map(s=>`<li>${s}</li>`).join("")}</ol></div>
+  <div class="block"><h3>Quick quiz</h3><div id="quiz" class="exs"></div></div>
+  <button class="donebtn ${done.includes(i)?'is':''}" id="markdone">${done.includes(i)?'✓ Chapter done':'Mark chapter done'}</button>
+  <div class="navrow">
+    ${i>0?`<button class="ghost" id="prev">← ${i}. ${CH[i-1].t}</button>`:""}
+    ${i<CH.length-1?`<button class="ghost" id="next">${i+2}. ${CH[i+1].t} →</button>`:""}
+  </div>`;
+  const qz = el.querySelector("#quiz");
+  c.quiz.forEach((q,qi)=>{
+    const d=document.createElement("div"); d.className="q";
+    d.innerHTML=`<div class="qq">${qi+1}. ${q.q}</div><div class="opts"></div><div class="fb" hidden></div>`;
+    const opts=d.querySelector(".opts"), fb=d.querySelector(".fb");
+    let solved=false;
+    q.o.forEach((o,oi)=>{
+      const b=document.createElement("button"); b.className="opt"; b.textContent=o;
+      b.onclick=()=>{ if(solved) return;
+        if(oi===q.a){ solved=true; b.classList.add("right"); fb.className="fb good"; fb.innerHTML=`<b>Correct!</b> ${q.e}`; }
+        else { b.classList.add("wrong"); b.disabled=true; fb.className="fb try"; fb.innerHTML=`<b>Not quite – try again.</b> Hint: ${q.e.split(/[.→]/)[0]}.`; }
+        fb.hidden=false;
+      };
+      opts.appendChild(b);
+    });
+    qz.appendChild(d);
+  });
+  el.querySelector("#back").onclick=goHome;
+  el.querySelector("#markdone").onclick=()=>{
+    if(done.includes(i)) done=done.filter(x=>x!==i); else done.push(i);
+    store.set(done); openCh(i);
+  };
+  const p=el.querySelector("#prev"), n=el.querySelector("#next");
+  if(p) p.onclick=()=>openCh(i-1);
+  if(n) n.onclick=()=>openCh(i+1);
+  document.getElementById("home").hidden=true; el.hidden=false;
+  try{ history.replaceState(null,"","#ch"+(i+1)) }catch(e){}
+  window.scrollTo(0,0);
+}
+function goHome(){
+  document.getElementById("chapter").hidden=true; document.getElementById("home").hidden=false;
+  try{ history.replaceState(null,"",location.pathname) }catch(e){}
+  renderHome(); window.scrollTo(0,0);
+}
+renderHome();
+const m = /^#ch(\d+)$/.exec(location.hash||"");
+if(m){ const k=+m[1]-1; if(CH[k]) openCh(k); }
+</script>
+</body></html>
